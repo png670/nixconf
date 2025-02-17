@@ -76,7 +76,7 @@ users.extraUsers.png76 = {
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      
+
     ];
   };
 
@@ -88,7 +88,6 @@ users.extraUsers.png76 = {
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
-
 
 nixpkgs.overlays = [
   (final: prev: {
@@ -131,6 +130,3 @@ environment.etc."xdg/dunst/dunstrc".source = "/home/png76/.config/dunst/dunstrc"
   # Did you read the comment?
   system.stateVersion = "23.05";
 }
-
-
-
