@@ -20,8 +20,10 @@
           inherit system inputs user;
         };
         modules = [
-          ./unfree-merger.nix
-          ./configuration.nix
+	  ./configuration.nix
+          ./modules/unfree-merger.nix
+	  ./modules/dwm.nix
+	  ./modules/dwmblocks.nix
         ];
       };
     };

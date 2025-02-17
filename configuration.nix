@@ -9,6 +9,11 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
+
+      ./modules/unfree-merger.nix
+      ./modules/dwm.nix
+      ./modules/dmenu.nix
+      ./modules/dwmblocks.nix
     ];
 
   # Bootloader.
@@ -29,6 +34,11 @@ services.displayManager.ly.enable = true;
 services.picom.enable = true;
 
 programs.zsh.enable = true;
+programs.dwm.enable = true;
+programs.dmenu.enable = true;
+programs.dwmblocks.enable = true;
+
+
 nixpkgs.config.allowUnfree = true;
 
 
