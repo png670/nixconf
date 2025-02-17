@@ -92,9 +92,9 @@ users.extraUsers.png76 = {
 
 nixpkgs.overlays = [
   (final: prev: {
-    dwm = prev.dwm.overrideAttrs (old: { src = ./Dotfiles/dwm; });
-    dmenu = prev.dmenu.overrideAttrs (old: { src = ./Dotfiles/dmenu; });
-    dwmblocks = prev.dwmblocks.overrideAttrs (old: { src = ./Dotfiles/dwmblocks; });
+    dwm = prev.dwm.overrideAttrs (old: { src = ./suckless/dwm; });
+    dmenu = prev.dmenu.overrideAttrs (old: { src = ./suckless/dmenu; });
+    dwmblocks = prev.dwmblocks.overrideAttrs (old: { src = ./suckless/dwmblocks; });
   })
 ];
 
