@@ -8,12 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./packages.nix
-
-      ./modules/unfree-merger.nix
-      ./modules/dwm.nix
-      ./modules/dmenu.nix
-      ./modules/dwmblocks.nix
     ];
 
   # Bootloader.

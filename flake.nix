@@ -21,6 +21,8 @@
         };
         modules = [
 	  ./configuration.nix
+	  ./packages.nix
+
           ./modules/unfree-merger.nix
 	  ./modules/dwm.nix
 	  ./modules/dwmblocks.nix
