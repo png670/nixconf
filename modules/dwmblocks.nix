@@ -1,18 +1,19 @@
 { config, lib, pkgs, ... }:
 
 {
-  options = {
-    programs.dwmblocks.enable = lib.mkEnableOption "dwmblocks status bar";
+  systemd.user.services.dwmblocks = {
+    Unit = {
+      Description = "Dwmblocks status bar";
+      After = [ "graphical-session.target" ];
+    };
+
+    Service = {
+      ExecStart = "${pkgs.dwmblocks}/bin/dwmblocks";
+      Restart = "always";
+    };
+
+    wantedBy = [ "default.target" ]; # Correct way to enable it
   };
 
-  config = lib.mkIf config.programs.dwmblocks.enable {
-    environment.systemPackages = with pkgs; [ dwmblocks ];
-    systemd.user.services.dwmblocks = {
-      Service = {
-        ExecStart = "${pkgs.dwmblocks}/bin/dwmblocks";
-        Restart = "always";
-      };
-      Install = { WantedBy = [ "default.target" ]; };
-    };
-  };
+  environment.systemPackages = with pkgs; [ dwmblocks ];
 }

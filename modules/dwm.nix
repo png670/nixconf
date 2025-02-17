@@ -1,17 +1,22 @@
+
 { config, lib, pkgs, ... }:
 
 {
-  options = {
-    programs.dwm.enable = lib.mkEnableOption "dwm window manager";
+  programs.dwm.enable = true;
+
+  systemd.user.services.dwm = {
+    Unit = {
+      Description = "Dynamic Window Manager";
+      After = [ "graphical-session.target" ];
+    };
+
+    Service = {
+      ExecStart = "${pkgs.dwm}/bin/dwm";
+      Restart = "always";
+    };
+
+    wantedBy = [ "default.target" ]; # Correct way to enable it
   };
 
-  config = lib.mkIf config.programs.dwm.enable {
-    environment.systemPackages = with pkgs; [ dwm ];
-    services.xserver.windowManager.session = [{
-      name = "dwm";
-      start = ''
-        exec dwm
-      '';
-    }];
-  };
+  environment.systemPackages = with pkgs; [ dwm ];
 }
