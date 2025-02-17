@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ dmenu ];
+  environment.systemPackages = [
+    (pkgs.dmenu.overrideAttrs (old: {
+      src = ../suckless/dmenu;
+    }))
+  ];
 }
