@@ -1,0 +1,62 @@
+# packages.nix
+{ pkgs, ... }:
+
+{
+  environment.systemPackages = with pkgs; [
+    firefox
+    ly
+    lf
+    neovim
+    dwm
+    dwmblocks
+    dmenu
+    mesa
+    zlib
+    steam-run
+    neofetch
+    imlib2.dev
+    sxhkd
+    wget
+    eww
+    papirus-nord
+    dunst
+    gnumake
+    st
+    zsh
+    kitty
+    xclip
+    fastfetch
+    nitrogen
+    elinks
+    sxiv
+    mpv
+    vesktop
+    brightnessctl
+    thunderbird
+    xorg.xrandr
+    xorg.xinit
+    htop
+    alsa-utils
+    prismlauncher
+    xorg.xsetroot
+    xorg.xauth
+    picom
+    vim
+    qbittorrent
+    nordic
+    terminus_font
+    flameshot
+    gh
+    picom
+    stdenv
+    pkg-config
+    xterm
+    xorg.libXext
+    xorg.libX11
+    xorg.libXft
+    xorg.libXinerama
+    freetype
+    gcc
+  ];
+}
+
