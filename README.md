@@ -9,7 +9,7 @@ Wallpaper is attached. My dotfiles for reproducability across my machines and ea
 - steam
 - kitty
 - firefox
-- modules
+- suckless modules
 
 Change to your preference.
 
