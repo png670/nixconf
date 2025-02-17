@@ -26,9 +26,6 @@
     gcc
 
     # Window Manager
-    dwm
-    dwmblocks
-    dmenu
     st
     kitty
     nitrogen

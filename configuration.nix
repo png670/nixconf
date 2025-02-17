@@ -34,13 +34,7 @@ services.displayManager.ly.enable = true;
 services.picom.enable = true;
 
 programs.zsh.enable = true;
-programs.dwm.enable = true;
-programs.dmenu.enable = true;
-programs.dwmblocks.enable = true;
-
-
 nixpkgs.config.allowUnfree = true;
-
 
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -90,8 +84,6 @@ users.extraUsers.png76 = {
     ];
   };
 
-
-
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
   qt5.qtbase
@@ -99,18 +91,7 @@ users.extraUsers.png76 = {
     # here, NOT in environment.systemPackages
   ];
 
-nixpkgs.overlays = [
-  (final: prev: {
-    dwm = prev.dwm.overrideAttrs (old: { src = ./suckless/dwm; });
-    dmenu = prev.dmenu.overrideAttrs (old: { src = ./suckless/dmenu; });
-    dwmblocks = prev.dwmblocks.overrideAttrs (old: { src = ./suckless/dwmblocks; });
-  })
-];
-
-
 environment.etc."xdg/dunst/dunstrc".source = "/home/png76/.config/dunst/dunstrc";
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
