@@ -1,62 +1,64 @@
-# packages.nix
 { pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
+
+    # Utilities
     firefox
-    ly
-    lf
+    thunderbird
+    elinks
+    vesktop
+
+    # Terminal Utilities
     neovim
+    vim
+    lf
+    wget
+    xclip
+    zsh
+    htop
+    fastfetch
+    neofetch
+    gh
+    gnumake
+    pkg-config
+    stdenv
+    gcc
+
+    # Window Manager
     dwm
     dwmblocks
     dmenu
+    st
+    kitty
+    nitrogen
+    sxhkd
+    picom
+    eww
+    dunst
+    nordic
+    papirus-nord
+    flameshot
+    brightnessctl
+    terminus_font
+
+    # Multimedia
+    mpv
+    sxiv
+
+    # Development
+    imlib2.dev
+    xterm
+    alsa-utils
+
+    # Gaming
+    steam-run
+    qbittorrent
+    prismlauncher
+
+    # Other
     mesa
     zlib
-    steam-run
-    neofetch
-    imlib2.dev
-    sxhkd
-    wget
-    eww
-    papirus-nord
-    dunst
-    gnumake
-    st
-    zsh
-    kitty
-    xclip
-    fastfetch
-    nitrogen
-    elinks
-    sxiv
-    mpv
-    vesktop
-    brightnessctl
-    thunderbird
-    xorg.xrandr
-    xorg.xinit
-    htop
-    alsa-utils
-    prismlauncher
-    xorg.xsetroot
-    xorg.xauth
-    picom
-    vim
-    qbittorrent
-    nordic
-    terminus_font
-    flameshot
-    gh
-    picom
-    stdenv
-    pkg-config
-    xterm
-    xorg.libXext
-    xorg.libX11
-    xorg.libXft
-    xorg.libXinerama
     freetype
-    gcc
   ];
 }
-
