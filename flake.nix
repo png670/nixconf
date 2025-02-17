@@ -26,6 +26,7 @@
           ./modules/unfree-merger.nix
 	  ./modules/dwm.nix
 	  ./modules/dwmblocks.nix
+	  ./modules/dmenu.nix
         ];
       };
     };
