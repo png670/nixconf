@@ -1,25 +1,23 @@
-
 {
-  description = "My Personal NixOS Configuration";
+  description = "my flake Flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    dwm.url = "github:png670/dwm";
-    dwmblocks.url = "github:png670/dwmblocks";
-    dmenu.url = "github:png670/dmenu";
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }:
+  # Outputs
+  outputs = { self, nixpkgs, dwm, dwmblocks, dmenu, ... }:
     let
       system = "x86_64-linux";
-      pkgs   = import nixpkgs { inherit system; };
-    in
-    {
-      overlays.default = self.overlays.default;
+      pkgs = import nixpkgs { inherit system; };
+    in {
+      # NixOS Configuration
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system inputs; };
+        inherit system;
+        specialArgs = { inherit self; };
         modules = [
           ./configuration.nix
+
           ./modules
         ];
       };
