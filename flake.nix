@@ -6,9 +6,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    dmenu.url = "path:/home/png76/.config/dmenu";
-    dwm.url = "path:/home/png76/.config/dwm";
-    dwmblocks.url = "path:/home/png76/.config/dwmblocks";
+    dmenu.url = "git+https://github.com/png670/dmenu.git";
+    dwm.url = "git+https://github.com/png670/dwm.git";
+    dwmblocks.url = "git+https://github.com/png670/dwmblocks.git";
 
   };
 
@@ -16,13 +16,12 @@
 
   outputs = inputs@{ self, nixpkgs, ... }:
     let
-      user   = "sui";
       system = "x86_64-linux";
       pkgs   = import nixpkgs { inherit system; };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit system inputs user;
+          inherit system inputs;
         };
         modules = [
 	  ./configuration.nix
