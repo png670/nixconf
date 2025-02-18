@@ -4,8 +4,6 @@ Wallpaper is attached. My dotfiles for reproducability across my machines and ea
 
 # Features
 - flake
-- patched dwm
-- patched dwmblocks
 - steam
 - kitty
 - firefox
