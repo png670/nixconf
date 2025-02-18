@@ -25,16 +25,9 @@
     kitty
     nitrogen
     st
+    (dmenu.overrideAttrs (_: { src = /home/png76/.config/dmenu; }))
+    (dwm.overrideAttrs (_: { src = /home/png76/.config/dwm; }))
+    (dwmblocks.overrideAttrs (_: { src = /home/png76/.config/dwmblocks; }))
 
-    # Add suckless programs (dwm, dwmblocks, dmenu) with direct paths to config
-    (dwm.overrideAttrs (_: {
-      src = /home/png76/.config/dwm;
-    }))
-    (dwmblocks.overrideAttrs (_: {
-      src = /home/png76/.config/dwmblocks;
-    }))
-    (dmenu.overrideAttrs (_: {
-      src = /home/png76/.config/dmenu;
-    }))
   ];
 }
