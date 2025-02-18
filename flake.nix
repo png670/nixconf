@@ -6,9 +6,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    dmenu.url = "path:../dmenu";
-    dwm.url = "path:../dwm";
-    dwmblocks.url = "path:../dwmblocks";
+    dmenu.url = "path:/home/png76/.config/dmenu";
+    dwm.url = "path:/home/png76/.config/dwm";
+    dwmblocks.url = "path:/home/png76/.config/dwmblocks";
 
   };
 
