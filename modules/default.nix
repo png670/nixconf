@@ -6,7 +6,6 @@
 	./games.nix
         ./development.nix
 	./unfree-merger.nix
-	./dwm.nix
     ];
 
 
