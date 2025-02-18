@@ -25,9 +25,5 @@
     kitty
     nitrogen
     st
-    (dmenu.overrideAttrs (_: { src = /home/png76/.config/dmenu; }))
-    (dwm.overrideAttrs (_: { src = /home/png76/.config/dwm; }))
-    (dwmblocks.overrideAttrs (_: { src = /home/png76/.config/dwmblocks; }))
-
   ];
 }

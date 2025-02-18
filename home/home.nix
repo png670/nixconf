@@ -72,14 +72,5 @@
     EDITOR = "nvim";
   };
 
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -l";
-      ".." = "cd ..";
-      "neo" = "neofetch";
-    };
-  };
-
   programs.home-manager.enable = true;
 }
