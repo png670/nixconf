@@ -39,8 +39,6 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/dwm/config.h".source = ./config.h;
-
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -70,20 +68,9 @@
   #  /etc/profiles/per-user/png76/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
+    # EDITOR = "emacs";
   };
 
-
-  programs.zsh = {
-     enable = true;
-     shellAliases = {
-       ll = "ls -l";
-       ".." = "cd ..";
-       neo = "neofetch";
-     };
-  };
-
+  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-
 }
