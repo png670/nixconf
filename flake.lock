@@ -1,40 +1,56 @@
 {
   "nodes": {
-    "dwm": {
+    "dmenu": {
       "inputs": {
-        "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1739888061,
-        "narHash": "sha256-q4/Gcpabjo7xRI+vXtGPZDtoOV6vrkWh1zileZxZkOQ=",
+        "lastModified": 1739889658,
+        "narHash": "sha256-v+KY96s0mP7ijdQrz9Wu5t0Jfph4CyRiQqoR29CtKOY=",
         "owner": "png670",
-        "repo": "dwm",
-        "rev": "c392d74a86550c7dece92b689494aaf396f36890",
+        "repo": "dmenu",
+        "rev": "6d880ddc6ff45ab8913c641632043e21cd37ad62",
         "type": "github"
       },
       "original": {
         "owner": "png670",
-        "ref": "main",
+        "repo": "dmenu",
+        "type": "github"
+      }
+    },
+    "dwm": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1739889587,
+        "narHash": "sha256-K2j4Pr6st+7xjMBkmQEnmSZUQ/YPo9Zjswig69z45ik=",
+        "owner": "png670",
+        "repo": "dwm",
+        "rev": "36cc09d996faa640673bf713df66bd408b235c7f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "png670",
         "repo": "dwm",
         "type": "github"
       }
     },
-    "flake-utils": {
+    "dwmblocks": {
       "inputs": {
-        "systems": "systems"
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "lastModified": 1739889705,
+        "narHash": "sha256-ECeV5Vhh/1OgSm7vL2f34QtHQqLU8OecRGZaSlgSyDI=",
+        "owner": "png670",
+        "repo": "dwmblocks",
+        "rev": "639db5eee6fe7e1070327a6209bf5a6d03308d57",
         "type": "github"
       },
       "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
+        "owner": "png670",
+        "repo": "dwmblocks",
         "type": "github"
       }
     },
@@ -42,15 +58,16 @@
       "locked": {
         "lastModified": 1739758141,
         "narHash": "sha256-uq6A2L7o1/tR6VfmYhZWoVAwb3gTy7j4Jx30MIrH0rE=",
-        "owner": "NixOS",
+        "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "c618e28f70257593de75a7044438efc1c1fc0791",
         "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
+        "owner": "nixos",
         "ref": "nixos-24.11",
-        "type": "indirect"
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixpkgs_2": {
@@ -69,25 +86,44 @@
         "type": "github"
       }
     },
-    "root": {
-      "inputs": {
-        "dwm": "dwm",
-        "nixpkgs": "nixpkgs_2"
-      }
-    },
-    "systems": {
+    "nixpkgs_3": {
       "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "lastModified": 1739758141,
+        "narHash": "sha256-uq6A2L7o1/tR6VfmYhZWoVAwb3gTy7j4Jx30MIrH0rE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c618e28f70257593de75a7044438efc1c1fc0791",
         "type": "github"
       },
       "original": {
-        "owner": "nix-systems",
-        "repo": "default",
+        "owner": "nixos",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1739758141,
+        "narHash": "sha256-uq6A2L7o1/tR6VfmYhZWoVAwb3gTy7j4Jx30MIrH0rE=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c618e28f70257593de75a7044438efc1c1fc0791",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "dmenu": "dmenu",
+        "dwm": "dwm",
+        "dwmblocks": "dwmblocks",
+        "nixpkgs": "nixpkgs_4"
       }
     }
   },
