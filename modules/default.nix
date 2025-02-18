@@ -5,7 +5,6 @@
 	./multimedia.nix
 	./games.nix
         ./development.nix
-	./suckless.nix
 	./unfree-merger.nix
     ];
 
