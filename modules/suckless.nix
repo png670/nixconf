@@ -3,7 +3,7 @@
 
 let
   sucklessSrc = builtins.fetchGit {
-    url = "https://github.com/png60/suckless.git";
+    url = "git@github.com:png670/suckless-config.git";
     rev = "5550aa61e27686b56df52c4b25615d2cba89f939";  # Replace with the actual commit hash
   };
 in
