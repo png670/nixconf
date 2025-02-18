@@ -35,7 +35,7 @@ with lib;
               owner = "png670";
               repo = "dwm";
               rev = "main";
-              sha256 = "sha256-9u6UoJcda92iPCXXupS+F55yh/H3n/DmHS+vVqjLZFc=";
+              sha256 = "sha256-BS0TqbPZwDoh/qx2MgTnpM3rFcRC2R4e0/TssFPuTxA=";
               # sha256 = lib.fakeSha256;
             };
           };
