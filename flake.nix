@@ -18,6 +18,7 @@
         modules = [
           ./configuration.nix
           ./modules
+	  ./modules/dwm.nix
         ];
 
       };
