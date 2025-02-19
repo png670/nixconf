@@ -4,7 +4,7 @@
     nixpkgs.allowUnfreePackages = mkOption {
       type = with types; listOf str;
       default = [];
-      example = [ "steam" "steam-original" ];
+      example = [ "steam" "steam-original" "steam-unwrapped" ];
     };
   };
 

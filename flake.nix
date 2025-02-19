@@ -4,7 +4,8 @@
   ## Inputs:
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -14,26 +15,27 @@
 
   ## Outputs:
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-stable, home-manager, ... }:
     let
       user   = "png76";
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs        = import nixpkgs        { inherit system; };
+      pkgs-stable = import nixpkgs-stable { inherit system; };
     in {
-      nixosConfigurations.NixOwOs = nixpkgs.lib.nixosSystem
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem
         {
           specialArgs = {
-            inherit system inputs user pkgs;
+            inherit system inputs user pkgs-stable;
           };
           modules = [
             ./unfree-merger.nix
             ./nixos/configuration.nix
           ];
         };
-      homeConfigurations.png76 = home-manager.lib.homeManagerConfiguration
+      homeConfigurations.sui = home-manager.lib.homeManagerConfiguration
         {
           inherit pkgs;
-          extraSpecialArgs = { inherit system inputs pkgs user; };
+          extraSpecialArgs = { inherit user; };
           modules = [
             ./unfree-merger.nix
             ./home-manager/home.nix

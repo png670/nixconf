@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     firefox
@@ -38,4 +38,10 @@
     nitrogen
     st
   ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "steam-unwrapped"
+  ];
+
+
 }

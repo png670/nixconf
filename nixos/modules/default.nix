@@ -4,5 +4,6 @@
     ./sound
     ./system
     ./user
+    ./unfree-merger.nix
   ];
 }
