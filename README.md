@@ -1,4 +1,4 @@
-# My Nixos configuration and suckless dotfiles
+# My Nixos configuration
 
 Wallpaper is attached. My dotfiles for reproducability across my machines and ease of configuration.
 
