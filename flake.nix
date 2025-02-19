@@ -1,38 +1,43 @@
-
 {
-  description = "my Flake";
+  description = "My nix flake";
+
+  ## Inputs:
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
-    home-manager.url = "github:nix-community/home-manager";  # Add Home Manager as an input
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";  # Link Home Manager to the nixpkgs input
-
-    dwm.url = "github:png670/dwm";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  ## Outputs:
+
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
-      lib = nixpkgs.lib;
+      user   = "png76";
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs { inherit system; };
     in {
-      nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          inherit system;
+      nixosConfigurations.NixOwOs = nixpkgs.lib.nixosSystem
+        {
+          specialArgs = {
+            inherit system inputs user pkgs;
+          };
           modules = [
+            ./unfree-merger.nix
             ./nixos/configuration.nix
-            ./nixos/modules
           ];
-
         };
-      };
-
-      homeConfigurations = {
-        png76 = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.png76 = home-manager.lib.homeManagerConfiguration
+        {
           inherit pkgs;
-          modules = [ ./home-manager/home.nix ];
+          extraSpecialArgs = { inherit system inputs pkgs user; };
+          modules = [
+            ./unfree-merger.nix
+            ./home-manager/home.nix
+          ];
         };
-      };
     };
 }
