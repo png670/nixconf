@@ -1,16 +1,14 @@
+
 { pkgs, lib, user, ... }:
 
 {
   programs.zsh.enable = true;
-  # Don't forget to set a password with ‘passwd’.
-  users = {
-    defaultUserShell = pkgs.zsh;
 
-    users.${user} = {
-      isNormalUser = true;
-      description = "${user}";
-      extraGroups = [ "wheel" ];
-      packages = with pkgs; [];
-    };
+  users.users.png76 = {
+    isNormalUser = true;
+    description = "png76";
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [];
+    shell = pkgs.zsh;  # Set default shell for the user
   };
 }
