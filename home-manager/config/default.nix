@@ -1,0 +1,7 @@
+{
+  imports = [
+    ./dwm
+    ./dmenu
+    ./dwmblocks
+  ];
+}

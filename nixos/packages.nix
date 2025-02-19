@@ -1,6 +1,4 @@
-
-{ pkgs, config, ... }:
-
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     firefox
@@ -15,6 +13,20 @@
     htop
     neofetch
     neovim
+    gh
+    gcc
+    stdenv
+    mesa
+    gnumake
+    zlib
+    pkg-config
+    freetype
+    sxiv
+    mpv
+    mpd
+    steeam-run
+    prismlauncher
+    qbittorrent
     flameshot
     brightnessctl
     terminus_font
