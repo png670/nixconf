@@ -24,7 +24,7 @@
     sxiv
     mpv
     mpd
-    steeam-run
+    steam-run
     prismlauncher
     qbittorrent
     flameshot
