@@ -12,11 +12,18 @@ let
             url = "https://github.com/png670/dwmblocks.git";
         };
     };
+
+    dmenu = pkgs.dmenu.overrideAttrs {
+        src = fetchGit {
+            url = "https://github.com/png670/dmenu.git";
+        };
+    };
+
 in
 {
     home = {
-        file.".xinitrc".source = ./xinitrc;
-        file.".Xauthority".source = ./Xauthority;
+        file.".xinitrc".source = ./.xinitrc;
+        file.".Xauthority".source = ./.Xauthority;
 
         packages = with pkgs; [
             dwm
@@ -24,14 +31,7 @@ in
             dmenu
             dunst # notification daemon
             libnotify # includes notify-send
-            scrot # for takin screenshots
             slock # X screen locker
-
-            # clipboard utils
-            xclip
-            xsel
-
             xorg.xkill
         ];
     };
-}
