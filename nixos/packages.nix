@@ -24,7 +24,6 @@
     sxiv
     mpv
     mpd
-    steam-run
     prismlauncher
     qbittorrent
     flameshot
@@ -37,10 +36,6 @@
     kitty
     nitrogen
     st
-  ];
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-    "steam-unwrapped"
   ];
 
 
