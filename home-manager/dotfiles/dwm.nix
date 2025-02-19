@@ -35,3 +35,4 @@ in
             xorg.xkill
         ];
     };
+}
