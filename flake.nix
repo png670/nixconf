@@ -14,16 +14,17 @@
   };
 
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, dwm-patched, ... }:
     let
       user   = "png76";
       system = "x86_64-linux";
       pkgs   = import nixpkgs { inherit system; };
+      dwm    = import dwm-patched { inherit system; };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem
         {
           specialArgs = {
-            inherit system inputs user pkgs;
+            inherit system inputs user pkgs dwm;
           };
           modules = [
             ./nixos/configuration.nix
