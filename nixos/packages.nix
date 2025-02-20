@@ -4,6 +4,7 @@
     firefox
     thunderbird
     vesktop
+    lf
     wget
     xclip
     zsh
