@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "dwm": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1740081557,
-        "narHash": "sha256-N6Z9enmA0upK+roJ1qvC5K2KkndM/xmGm7iLsIrflc0=",
-        "owner": "png670",
-        "repo": "dwm",
-        "rev": "fb68c97880ee1e0234ad2b31ce3093e878a24e10",
-        "type": "github"
-      },
-      "original": {
-        "owner": "png670",
-        "repo": "dwm",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -55,7 +39,6 @@
     },
     "root": {
       "inputs": {
-        "dwm": "dwm",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
