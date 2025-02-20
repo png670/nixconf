@@ -1,6 +1,6 @@
-# My Nix-config
+# nixos-config
 
-My nix-flake including my nix modules and home-manager config.
+A nix-flake including my nix modules and home-manager config.
 Fairly lightweight. Has various performance options that you can change to your preference.
 Also includes my wallpaper.
 
