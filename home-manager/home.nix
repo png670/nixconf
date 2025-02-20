@@ -4,7 +4,7 @@
   imports =
     [
       ./modules
-      ./dotfiles
+      ./overlays
 
       ./packages.nix
     ];

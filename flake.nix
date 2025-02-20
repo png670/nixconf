@@ -2,19 +2,17 @@
 {
   description = "My nix flake";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    dwm = { url = "github:png670/dwm"; flake = false; };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";  # Only using stable
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";  # Use stable nixpkgs
     };
   };
 
-
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
       user   = "png76";
       system = "x86_64-linux";
@@ -26,9 +24,8 @@
             inherit system inputs user pkgs;
           };
           modules = [
+            ./unfree-merger.nix
             ./nixos/configuration.nix
-	    ./overlays
-	    ./unfree-merger.nix
           ];
         };
 
@@ -37,8 +34,8 @@
           inherit pkgs;
           extraSpecialArgs = { inherit user; };
           modules = [
+            ./unfree-merger.nix
             ./home-manager/home.nix
-	    ./unfree-merger.nix
           ];
         };
     };

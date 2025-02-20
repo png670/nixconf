@@ -3,13 +3,13 @@
 let
     dwm = pkgs.dwm.overrideAttrs {
         src = fetchGit {
-            url = "https://github.com/png670/dwm-patched.git";
+            url = "https://github.com/png670/dwm.git";
         };
     };
 
     dwmblocks = pkgs.dwmblocks.overrideAttrs {
         src = fetchGit {
-            url = "https://github.com/png670/dwmblocks-patched.git";
+            url = "https://github.com/png670/dwmblocks.git";
         };
     };
 
