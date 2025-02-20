@@ -1,39 +1,18 @@
 {
   "nodes": {
-    "dwm-patched": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
-      },
+    "dwm": {
+      "flake": false,
       "locked": {
-        "lastModified": 1740077399,
-        "narHash": "sha256-+jI3oXF7FaAHP+wBL9bLsblP6XSS/vpngNPKLLgKfCM=",
+        "lastModified": 1740081557,
+        "narHash": "sha256-N6Z9enmA0upK+roJ1qvC5K2KkndM/xmGm7iLsIrflc0=",
         "owner": "png670",
-        "repo": "dwm-patched",
-        "rev": "f228b937c314022ab87827c54908b6a2784d8225",
+        "repo": "dwm",
+        "rev": "fb68c97880ee1e0234ad2b31ce3093e878a24e10",
         "type": "github"
       },
       "original": {
         "owner": "png670",
-        "repo": "dwm-patched",
-        "type": "github"
-      }
-    },
-    "flake-utils": {
-      "inputs": {
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
+        "repo": "dwm",
         "type": "github"
       }
     },
@@ -60,21 +39,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1739923778,
-        "narHash": "sha256-BqUY8tz0AQ4to2Z4+uaKczh81zsGZSYxjgvtw+fvIfM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "36864ed72f234b9540da4cf7a0c49e351d30d3f1",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-24.11",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1739758141,
         "narHash": "sha256-uq6A2L7o1/tR6VfmYhZWoVAwb3gTy7j4Jx30MIrH0rE=",
         "owner": "nixos",
@@ -91,24 +55,9 @@
     },
     "root": {
       "inputs": {
-        "dwm-patched": "dwm-patched",
+        "dwm": "dwm",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

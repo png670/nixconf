@@ -5,7 +5,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    dwm-patched.url = "github:png670/dwm-patched";
+    dwm = { url = "github:png670/dwm"; flake = false; };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -14,20 +14,20 @@
   };
 
 
-  outputs = inputs@{ self, nixpkgs, home-manager, dwm-patched, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       user   = "png76";
       system = "x86_64-linux";
       pkgs   = import nixpkgs { inherit system; };
-      dwm    = import dwm-patched { inherit system; };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem
         {
           specialArgs = {
-            inherit system inputs user pkgs dwm;
+            inherit system inputs user pkgs;
           };
           modules = [
             ./nixos/configuration.nix
+	    ./overlays
 	    ./unfree-merger.nix
           ];
         };
