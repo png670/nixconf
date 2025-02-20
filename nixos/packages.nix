@@ -8,6 +8,7 @@
     wget
     xclip
     zsh
+    tmux
     alsa-utils
     killall
     htop
