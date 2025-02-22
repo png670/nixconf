@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./mpd
+     ./mpd
     ./pipewire
   ];
   disabledModules = [ ];
