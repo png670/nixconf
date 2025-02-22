@@ -4,5 +4,4 @@
     ./git
     ./mpd
   ];
-  disabledModules = [ "mpd" ];
 }
