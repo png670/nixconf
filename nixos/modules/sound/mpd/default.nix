@@ -16,7 +16,7 @@
           name "My PipeWire Output"
         }
       '';
-      user = user;
+      user = "png76";
       network.listenAddress = "any";
       startWhenNeeded = true;
     };
