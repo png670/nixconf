@@ -4,7 +4,7 @@
   # # use 'systemctl --user' to interact
    services.mpd = {
      enable = true;
-     musicDirectory = "${config.home.homeDirectory}/Music/library";
+     musicDirectory = "${config.home.homeDirectory}/Music";
      extraConfig = ''
        # prevent mpd from suddenly resuming
        restore_paused    "yes"
