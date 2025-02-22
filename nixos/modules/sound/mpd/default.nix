@@ -1,32 +1,30 @@
 
-{ pkgs, config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
-let
-  user = "png76"; # Replace with your actual username
-in
 {
-  services.mpd = {
-    enable = true;
-    user = user;
-    extraConfig = ''
-      # music dir
-      music_directory   "~/Music/library"
-
-      # prevent mpd from suddenly resuming
-      restore_paused    "yes"
-
-      # pipewire output
-      audio_output {
-        type "pipewire"
-        name "My PipeWire output"
-      }
-    '';
+  options.png76 = {
+    enable = lib.mkEnableOption "Enable MPD with PipeWire support";
   };
 
-  # mpd pipewire workaround (https://nixos.wiki/wiki/MPD)
-  systemd.services.mpd.environment = {
-    XDG_RUNTIME_DIR = "/run/user/${toString config.users.users.${user}.uid}";
-  };
+  config = lib.mkIf config.png76.enable {
+    services.mpd = {
+      enable = true;
+      musicDirectory = "/home/png76/Music";
+      extraConfig = ''
+        audio_output {
+          type "pipewire"
+          name "My PipeWire Output"
+        }
+      '';
+      user = user;
+      network.listenAddress = "any";
+      startWhenNeeded = true;
+    };
 
-  environment.systemPackages = with pkgs; [ mpc ];
+    systemd.services.mpd.environment = {
+      XDG_RUNTIME_DIR = "/run/user/1000";
+    };
+
+    environment.systemPackages = with pkgs; [ mpc ];
+  };
 }
