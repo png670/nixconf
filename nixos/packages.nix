@@ -18,7 +18,6 @@
     freetype
     sxiv
     mpv
-    ncmpcpp
     prismlauncher
     qbittorrent
     flameshot
