@@ -4,16 +4,16 @@
 
 {
   home.file = {
-    ".config/dwm" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/png76/.config/dwm";
+    "./dmenu/config.def.h" = {
+      source = "/home/png76/.config/dmenu/config.def.h";
     };
 
-    ".config/dwmblocks" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/png76/.config/dwmblocks";
+    "./dwmblocks/config.h" = {
+      source = "/home/png76/.config/dwmblocks/config.h";
     };
 
-    ".config/dmenu" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/png76/.config/dmenu";
+    "./dwm/.config.h" = {
+      source = "/home/png76/.config/dwm/config.h";
     };
   };
 }
