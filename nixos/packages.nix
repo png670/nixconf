@@ -7,6 +7,7 @@
     lf
     wget
     xclip
+    udiskie
     zsh
     tmux
     alsa-utils
