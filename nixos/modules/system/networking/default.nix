@@ -18,5 +18,4 @@
   };
   users.users.png76.extraGroups = [ "audio" ];
 
-  };
 }
