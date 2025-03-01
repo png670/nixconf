@@ -3,6 +3,6 @@
     ./lf
     ./git
     ./mpd
-    ./firefox.nix
+    ./kitty.nix
   ];
 }
