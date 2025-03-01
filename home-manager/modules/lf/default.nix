@@ -87,7 +87,7 @@
       reverse = true;
       preview = true;
       hidden = true;
-      drawbox = true;
+      drawbox = false;
       icons = true;
       ignorecase = true;
     };
