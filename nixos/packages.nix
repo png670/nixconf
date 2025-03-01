@@ -1,9 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib,  ... }:
 {
   environment.systemPackages = with pkgs; [
     firefox
     thunderbird
-    vesktop
     lf
     wget
     xclip
@@ -23,7 +22,6 @@
     qbittorrent
     flameshot
     brightnessctl
-    terminus_font
     papirus-nord
     nordic
     dunst
@@ -31,7 +29,11 @@
     kitty
     nitrogen
     st
-  ];
+    nerd-fonts.hack
+    libertinus
+    terminus_font
 
+
+  ];
 
 }
