@@ -6,7 +6,7 @@
       ./modules
       ./dotfiles
 
-      ./packages.nix
+      ./general.nix
     ];
 
 
@@ -16,9 +16,6 @@
   home.homeDirectory = "/home/png76";
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
-
-  home.packages = [
-  ];
 
   home.sessionVariables = {
      EDITOR = "nvim";

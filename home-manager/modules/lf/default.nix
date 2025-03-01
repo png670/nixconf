@@ -31,8 +31,8 @@
         }}
       '';
       drag-out = ''%${pkgs.ripdrag}/bin/ripdrag -a -x "$fx"'';
-      editor-open = ''$EDITOR "$f"'';
-      edit-dir = ''$EDITOR .'';
+      editor-open = ''$$EDITOR "$f"'';
+      edit-dir = ''$$EDITOR .'';
 
       #on-cd = ''
       #  ''${{ }}
