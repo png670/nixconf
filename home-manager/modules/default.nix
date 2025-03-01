@@ -5,6 +5,6 @@
     ./mpd.nix
     ./kitty.nix
     ./firefox.nix
-    ./stylix.nix
+    ./stylix/stylix.nix
   ];
 }

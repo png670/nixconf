@@ -19,7 +19,7 @@
   };
 
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, ... } @ inputs:
     let
       user   = "png76";
       system = "x86_64-linux";
@@ -43,6 +43,8 @@
           modules = [
             ./unfree-merger.nix
             ./home-manager/home.nix
+
+	    stylix.homeManagerModules.stylix
           ];
         };
     };
