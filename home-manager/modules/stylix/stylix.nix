@@ -1,35 +1,41 @@
+
 {
   pkgs,
   config,
   lib,
   ...
 }: {
-  stylix = {
-    # base16Scheme = ./theme.yaml;
-    # base16Scheme = {
-    #   base00 = "282828"; # ----
-    #   base01 = "3c3836"; # ---
-    #   base02 = "504945"; # --
-    #   base03 = "665c54"; # -
-    #   base04 = "bdae93"; # +
-    #   base05 = "d5c4a1"; # ++
-    #   base06 = "ebdbb2"; # +++
-    #   base07 = "fbf1c7"; # ++++
-    #   base08 = "fb4934"; # red
-    #   base09 = "fe8019"; # orange
-    #   base0A = "fabd2f"; # yellow
-    #   base0B = "b8bb26"; # green
-    #   base0C = "8ec07c"; # aqua/cyan
-    #   base0D = "83a598"; # blue
-    #   base0E = "d3869b"; # purple
-    #   base0F = "d65d0e"; # brown
-    # };
 
-    # stylix.image = ./prism/wallpapers/gruvbox-mountain-village.png;
+  stylix = {
+    base16Scheme = {
+      base00 = "#13141d"; # ----
+      base01 = "#3B4252"; # ---
+      base02 = "#434C5E"; # --
+      base03 = "#458588"; # -
+      base04 = "#D8DEE9"; # +
+      base05 = "#E5E9F0"; # ++
+      base06 = "#ECEFF4"; # +++
+      base07 = "#8FBCBB"; # ++++
+      base08 = "#BF616A"; # red
+      base09 = "#D08770"; # orange
+      base0A = "#EBCB8B"; # yellow
+      base0B = "#A3BE8C"; # green
+      base0C = "#88C0D0"; # aqua/cyan
+      base0D = "#80a1bd"; # blue
+      base0E = "#81A1C1"; # purple
+      base0F = "#B48EAD"; # brown
+    };
+
+    image = ./wallpaper.png;
 
     targets.waybar.enable = false;
     targets.rofi.enable = false;
     targets.kde.enable = false;
+
+    opacity = {
+      desktop = 0.5;
+      terminal = 0.9;
+    };
 
     autoEnable = true;
     enable = true;

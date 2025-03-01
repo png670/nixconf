@@ -6,5 +6,6 @@
     ./kitty.nix
     ./firefox.nix
     ./stylix/stylix.nix
+    ./vesktop.nix
   ];
 }

@@ -36,9 +36,6 @@
 
       selection_foreground = "#1d1f21";
 
-      # Transparency
-      background_opacity = "0.8";
-
       #fonts
       font_family = "monospace";
       bold_font = "auto";

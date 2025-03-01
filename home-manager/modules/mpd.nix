@@ -15,5 +15,5 @@
        }
      '';
    };
-  home.packages = with pkgs; [ mpd mpc ncmpcpp ];
+  home.packages = with pkgs; [ mpd mpc ncmpcpp cmus ];
 }

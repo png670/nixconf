@@ -31,8 +31,8 @@
         }}
       '';
       drag-out = ''%${pkgs.ripdrag}/bin/ripdrag -a -x "$fx"'';
-      editor-open = ''$$EDITOR "$f"'';
-      edit-dir = ''$$EDITOR .'';
+      editor-open = ''$EDITOR "$f"'';
+      edit-dir = ''$EDITOR .'';
 
       #on-cd = ''
       #  ''${{ }}
@@ -86,7 +86,7 @@
     settings = {
       reverse = true;
       preview = true;
-      hidden = true;
+      hidden = false;
       drawbox = false;
       icons = true;
       ignorecase = true;
