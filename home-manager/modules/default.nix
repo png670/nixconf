@@ -1,6 +1,6 @@
 {
   imports = [
-    ./dev
+    ./lf
     ./git
     ./mpd
   ];
