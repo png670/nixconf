@@ -18,10 +18,5 @@
   };
   users.users.png76.extraGroups = [ "audio" ];
 
-  # mullvad
-  services.mullvad-vpn = {
-    enable = true;
-    enableExcludeWrapper = true;
-    package = pkgs.mullvad-vpn;
   };
 }
