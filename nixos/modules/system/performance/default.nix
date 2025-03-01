@@ -56,7 +56,7 @@
 
        #Optional helps save long term battery health
        # START_CHARGE_THRESH_BAT0 = 60; # 60 and below it starts to charge
-       # STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
+        STOP_CHARGE_THRESH_BAT0 = 100; # 90 and above it stops charging
 
       };
   };
