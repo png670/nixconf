@@ -8,7 +8,7 @@
 
   stylix = {
     base16Scheme = {
-      base00 = "#13141d";
+      base00 = "#191724";
       base01 = "#3B4252";
       base02 = "#434C5E";
       base03 = "#4C566A";
@@ -25,7 +25,7 @@
       base0E = "#B48EAD";
       base0F = "#5E81AC";
     };
-
+# 13141d
     image = ./wallpaper.png;
 
     fonts = {
