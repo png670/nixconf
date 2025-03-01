@@ -29,11 +29,13 @@
     kitty
     nitrogen
     st
-    nerd-fonts.hack
-    libertinus
-    terminus_font
-
-
   ];
+  fonts.packages = with pkgs; [
+    hack-font
+    cm_unicode
+    terminus_font
+    libertinus
+  ];
+
 
 }

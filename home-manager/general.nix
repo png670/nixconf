@@ -5,6 +5,7 @@
     tree
     playerctl
     nh
+    vesktop
 
   ];
 }
