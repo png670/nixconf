@@ -1,8 +1,6 @@
 {
   imports = [
-    ./desktop
-    ./sound
-    ./system
-    ./user
+    ./bundles
+    ./features
   ];
 }

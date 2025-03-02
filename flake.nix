@@ -3,10 +3,10 @@
   description = "My nix flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";  # Using stable
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";  # Using stable
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -33,6 +33,8 @@
           modules = [
             ./unfree-merger.nix
             ./nixos/configuration.nix
+
+	    stylix.homeManagerModules.stylix
           ];
         };
 
@@ -44,7 +46,6 @@
             ./unfree-merger.nix
             ./home-manager/home.nix
 
-	    stylix.homeManagerModules.stylix
           ];
         };
     };

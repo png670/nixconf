@@ -8,8 +8,8 @@
 
   stylix = {
     base16Scheme = {
-      base00 = "#191724";
-      base01 = "#3B4252";
+      base00 = "#13141d";
+      base01 = "#303444";
       base02 = "#434C5E";
       base03 = "#4C566A";
       base04 = "#D8DEE9";

@@ -6,7 +6,6 @@
       ./modules
       ./dotfiles
 
-      ./general.nix
     ];
 
 
@@ -20,6 +19,13 @@
   home.sessionVariables = {
      EDITOR = "nvim";
   };
+
+  home.packages = with pkgs; [
+    tree
+    playerctl
+    nh
+    vesktop
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

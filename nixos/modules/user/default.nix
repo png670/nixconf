@@ -1,7 +1,0 @@
-{
-  imports = [
-    ./env
-    ./keyboard
-    ./user
-  ];
-}
