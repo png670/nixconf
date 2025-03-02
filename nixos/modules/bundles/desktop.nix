@@ -37,17 +37,13 @@
       jack.enable = true;
     };
 
-    # Bluetooth and other hardware services
-    bluetooth.enable = true;
-    bluetooth.powerOnBoot = true;
-
     # RTKit for real-time priorities
-    security.rtkit.enable = true;
   };
+
+  security.rtkit.enable = true;
 
   # Hardware settings
   hardware = {
-    enableAllFirmware = true;
     opengl = {
       enable = true;
       driSupport32Bit = true;
