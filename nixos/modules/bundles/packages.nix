@@ -26,6 +26,7 @@
     nordic
     dunst
     picom
+    dconf
     kitty
     nitrogen
     st
