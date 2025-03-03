@@ -11,6 +11,7 @@
     tmux
     alsa-utils
     htop
+    nh
     neofetch
     neovim
     mesa
@@ -19,16 +20,15 @@
     sxiv
     mpv
     prismlauncher
-    qbittorrent
     flameshot
     brightnessctl
     papirus-nord
     nordic
     dunst
     picom
-    dconf
     kitty
     nitrogen
+    lm_sensors
     st
   ];
   fonts.packages = with pkgs; [
