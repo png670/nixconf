@@ -3,7 +3,7 @@
   inputs,
   ...
 }: let
-  pkgs = inputs.nixpkgsold.legacyPackages."x86_64-linux";
+  pkgs = inputs.nixpkgs.legacyPackages."x86_64-linux";
 in {
 
   gtk.enable = true;

@@ -1,6 +1,0 @@
-{
-  imports = [
-    ./bundles
-    ./features
-  ];
-}

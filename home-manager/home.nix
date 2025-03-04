@@ -3,8 +3,10 @@
 {
   imports =
     [
-      ./modules
+      ./features
+      ./packages.nix
       ./dotfiles
+      
 
     ];
 
