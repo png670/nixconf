@@ -22,7 +22,6 @@
     prismlauncher
     flameshot
     brightnessctl
-    papirus-nord
     nordic
     dunst
     picom

@@ -8,5 +8,5 @@ in {
 
   gtk.enable = true;
   gtk.iconTheme.package = pkgs.papirus-nord;
-  gtk.iconTheme.name = "Papirus-Nord";
+  gtk.iconTheme.name = "Papirus";
 }

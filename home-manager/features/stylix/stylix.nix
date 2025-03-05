@@ -29,8 +29,8 @@
 
     fonts = {
       monospace = {
-        package = pkgs.terminus_font;
-        name = "Terminus";
+        package = pkgs.hack-font;
+        name = "Hack";
        };
       sansSerif = {
         package = pkgs.libertine;
@@ -41,7 +41,7 @@
         name = "Libertine Serif";
        };
       sizes = {
-        applications = 12;
+        applications = 11;
         terminal = 15;
         desktop = 10;
         popups = 10;
