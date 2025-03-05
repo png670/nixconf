@@ -8,5 +8,6 @@
     ./kitty.nix
     ./firefox.nix
     ./vesktop.nix
+    ./minecraft.nix
   ];
 }
