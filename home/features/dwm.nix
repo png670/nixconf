@@ -1,23 +1,27 @@
+
 { config, pkgs, ... }:
 
 let
-    dwm = pkgs.dwm.overrideAttrs {
-        src = fetchGit {
+    dwm = pkgs.dwm.overrideAttrs (oldAttrs: {
+        src = builtins.fetchGit {
             url = "https://github.com/png670/dwm.git";
+            rev = "HEAD";  # Can be a specific commit
         };
-    };
+    });
 
-    dwmblocks = pkgs.dwmblocks.overrideAttrs {
-        src = fetchGit {
+    dwmblocks = pkgs.dwmblocks.overrideAttrs (oldAttrs: {
+        src = builtins.fetchGit {
             url = "https://github.com/png670/dwmblocks.git";
+            rev = "HEAD";
         };
-    };
+    });
 
-    dmenu = pkgs.dmenu.overrideAttrs {
-        src = fetchGit {
+    dmenu = pkgs.dmenu.overrideAttrs (oldAttrs: {
+        src = builtins.fetchGit {
             url = "https://github.com/png670/dmenu.git";
+            rev = "HEAD";
         };
-    };
+    });
 
 in
 {
