@@ -3,7 +3,6 @@
     (pkgs.vesktop.override {
       electron = pkgs.electron_33;
     })
-    discord
   ];
 
   xdg.configFile."vesktop/themes/nix-colors-theme.css" = {
