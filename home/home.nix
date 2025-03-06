@@ -5,7 +5,6 @@
     [
       ./features
       ./packages.nix
-      ./configs      
 
     ];
 
