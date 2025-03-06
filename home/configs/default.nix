@@ -3,15 +3,15 @@
 
 let
   dwm = pkgs.dwm.overrideAttrs (oldAttrs: {
-    src = builtins.path ./dwm;
+    src = builtins.path { path = ./dwm; };
   });
 
   dwmblocks = pkgs.dwmblocks.overrideAttrs (oldAttrs: {
-    src = builtins.path ./dwmblocks;
+    src = builtins.path { path = ./dwmblocks; };
   });
 
   dmenu = pkgs.dmenu.overrideAttrs (oldAttrs: {
-    src = builtins.path ./dmenu/;
+    src = builtins.path { path = ./dmenu; };
   });
 
 in {
