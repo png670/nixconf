@@ -10,6 +10,7 @@
     zsh
     tmux
     alsa-utils
+    pamixer
     htop
     nh
     neofetch
