@@ -22,8 +22,6 @@ let
 in
 {
     home = {
-        file.".xinitrc".source = ./.xinitrc;
-        file.".Xauthority".source = ./.Xauthority;
 
         packages = with pkgs; [
             dwm

@@ -11,32 +11,31 @@
 
     settings = {
 
-    # colors
-      background = "#13141d";
-      foreground = "#cfd1dd";
-      cursor = "#c4c8c5";
-      selection_background = "#d8bf80";
+      background = "#191724";
+      foreground = "#e0def4";
+      cursor = "#e0def4";
+      selection_background = "#ebbcba";
+      selection_foreground = "#1f1d2e";
 
-      color0 = "#000000";
-      color8 = "#80a1bd";
-      color1 = "#cc6666";
-      color9 = "#cc6666";
-      color2 = "#b5bd68";
-      color10 = "#b5bd68";
-      color3 = "#f0c574";
-      color11 = "#f0c574";
-      color4 = "#80a1bd";
-      color12 = "#80a1bd";
-      color5 = "#b294ba";
-      color13 = "#b294ba";
-      color6 = "#8abdb6";
-      color14 = "#8abdb6";
-      color7 = "#fffefe";
-      color15 = "#fffefe";
+      color0  = "#191724";
+      color1  = "#1f1d2e";
+      color2  = "#26233a";
+      color3  = "#6e6a86";
+      color4  = "#908caa";
+      color5  = "#e0def4";
+      color6  = "#e0def4";
+      color7  = "#524f67";
+      color8  = "#eb6f92";
+      color9  = "#f6c177";
+      color10 = "#ebbcba";
+      color11 = "#31748f";
+      color12 = "#9ccfd8";
+      color13 = "#c4a7e7";
+      color14 = "#f6c177";
+      color15 = "#524f67";
 
-      selection_foreground = "#1d1f21";
+      background_opacity = "0.9";
 
-      #fonts
       font_family = "monospace";
       bold_font = "auto";
       italic_font = "auto";
@@ -56,7 +55,6 @@
     };
 
     extraConfig = ''
-      # GENERATED
       action_alias kitty_scrollback_nvim kitten /home/${config.home.username}/.local/share/nvim/lazy/kitty-scrollback.nvim/python/kitty_scrollback_nvim.py
       map kitty_mod+h kitty_scrollback_nvim
       map kitty_mod+g kitty_scrollback_nvim --config ksb_builtin_last_cmd_output
