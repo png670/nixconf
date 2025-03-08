@@ -19,18 +19,6 @@
   };
 
   services = {
-    xserver.enable = true;
-    xserver.windowManager.dwm = {
-      enable = true;
-      package = pkgs.dwm.overrideAttrs (oldAttrs: {
-        src = pkgs.fetchFromGitHub {
-          owner = "png670";
-          repo = "dwm";
-          rev = "7257b01068ea908ce89017504f677d3cb49d54fc";
-          hash = "sha256-sHDX8dRb32Qv4NRt48tt8JlPd/XLr6fo0pKtS/hyt8A=";
-        };
-      });
-    };
     displayManager.ly.enable = true;
     picom.enable = true;
     pipewire = {

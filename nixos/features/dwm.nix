@@ -5,29 +5,24 @@ let
   suckless = pkgs.fetchFromGitHub {
     owner = "png670";
     repo = "dwm";
-    rev = "7257b01068ea908ce89017504f677d3cb49d54";
-    hash = "sha256-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    rev = "14774929057370d9e67622dcb55f8fa5a0fb2a01";
+    hash = "sha256-kEEdUZwjmFytsO19TkTY5GNIX45PJ1+nQ1oVv1+cpkU=";
   };
 in {
   services.xserver.enable = true;
   services.xserver.windowManager.dwm = {
-      enable = true;
+    enable = true;
     package = pkgs.dwm.overrideAttrs (oldAttrs: {
       src = "${suckless}/dwm";
     });
   };
 
-  programs.dmenu = {
-    enable = true;
-    package = pkgs.dmenu.overrideAttrs (oldAttrs: {
+  environment.systemPackages = [
+    (pkgs.dmenu.overrideAttrs (oldAttrs: {
       src = "${suckless}/dmenu";
-    });
-  };
-
-  services.dwmblocks = {
-    enable = true;
-    package = pkgs.dwmblocks.overrideAttrs (oldAttrs: {
+    }))
+    (pkgs.dwmblocks.overrideAttrs (oldAttrs: {
       src = "${suckless}/dwmblocks";
-    });
-  };
+    }))
+  ];
 }

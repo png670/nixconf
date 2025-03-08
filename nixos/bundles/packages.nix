@@ -31,6 +31,7 @@
     lm_sensors
     xorg.xkill
     libnotify
+    gnome-system-monitor
 
     #suckless
     st

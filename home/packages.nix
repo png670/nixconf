@@ -7,6 +7,7 @@
     tree
     nh
     vesktop
+    calcurse
 
   ];
 }
