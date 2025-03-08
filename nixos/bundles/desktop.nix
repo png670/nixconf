@@ -1,5 +1,5 @@
 
-{ pkgs, lib, ... }: {
+{ pkgs, lib, user, ... }: {
 
   # Time and Locale settings
   time.timeZone = "Europe/London";
@@ -18,7 +18,13 @@
       LC_TIME = "en_GB.UTF-8";
     };
   };
-
+  nixpkgs.overlays = [
+    (final: prev: {
+      dwm = prev.dwm.overrideAttrs (old: {src = /home/${user}/.config/dwm;}); #FIX ME: Update with path to your dwm folder
+      dwmblocks = prev.dwmblocks.overrideAttrs (old: {src = /home/${user}/.config/dwmblocks;});
+      dmenu = prev.dmenu.overrideAttrs (old: {src = /home/${user}/.config/dmenu;}); 
+    })
+  ];
   services = {
     # X server and window manager
     xserver.enable = true;
@@ -37,7 +43,6 @@
       jack.enable = true;
     };
 
-    # RTKit for real-time priorities
   };
 
   security.rtkit.enable = true;

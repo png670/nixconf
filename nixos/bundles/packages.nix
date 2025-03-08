@@ -29,7 +29,17 @@
     kitty
     nitrogen
     lm_sensors
+    xorg.xkill
+    libnotify
+
+    #suckless
     st
+    dwm
+    dmenu
+    dwmblocks
+    dunst
+    slock
+
   ];
   fonts.packages = with pkgs; [
     hack-font
