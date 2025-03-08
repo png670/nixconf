@@ -1,7 +1,6 @@
 
 { pkgs, lib, user, ... }: {
 
-  # Time and Locale settings
   time.timeZone = "Europe/London";
 
   i18n = {
@@ -18,23 +17,22 @@
       LC_TIME = "en_GB.UTF-8";
     };
   };
-  nixpkgs.overlays = [
-    (final: prev: {
-      dwm = prev.dwm.overrideAttrs (old: {src = /home/${user}/.config/dwm;}); #FIX ME: Update with path to your dwm folder
-      dwmblocks = prev.dwmblocks.overrideAttrs (old: {src = /home/${user}/.config/dwmblocks;});
-      dmenu = prev.dmenu.overrideAttrs (old: {src = /home/${user}/.config/dmenu;}); 
-    })
-  ];
-  services = {
-    # X server and window manager
-    xserver.enable = true;
-    xserver.windowManager.dwm.enable = true;
 
-    # Display manager and compositor
+  services = {
+    xserver.enable = true;
+    xserver.windowManager.dwm = {
+      enable = true;
+      package = pkgs.dwm.overrideAttrs (oldAttrs: {
+        src = pkgs.fetchFromGitHub {
+          owner = "png670";
+          repo = "dwm";
+          rev = "7257b01068ea908ce89017504f677d3cb49d54fc";
+          hash = "sha256-sHDX8dRb32Qv4NRt48tt8JlPd/XLr6fo0pKtS/hyt8A=";
+        };
+      });
+    };
     displayManager.ly.enable = true;
     picom.enable = true;
-
-    # Sound services
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -42,26 +40,20 @@
       pulse.enable = true;
       jack.enable = true;
     };
-
   };
 
   security.rtkit.enable = true;
 
-  # Hardware settings
-  hardware = {
-    opengl = {
-      enable = true;
-      driSupport32Bit = true;
-    };
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
   };
 
-  # Programs
   programs = {
     dconf.enable = true;
     direnv.enable = true;
   };
 
-  # XDG portals
   xdg.portal = {
     enable = true;
     wlr.enable = true;

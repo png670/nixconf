@@ -34,9 +34,6 @@
 
     #suckless
     st
-    dwm
-    dmenu
-    dwmblocks
     dunst
     slock
 
