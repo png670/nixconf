@@ -8,6 +8,6 @@
     nh
     vesktop
     calcurse
-
+    feh
   ];
 }

@@ -27,7 +27,6 @@
     dunst
     picom
     kitty
-    nitrogen
     lm_sensors
     xorg.xkill
     libnotify
