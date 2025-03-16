@@ -30,6 +30,7 @@
     xorg.xkill
     libnotify
     gnome-system-monitor
+    nix-prefetch-git
 
     #suckless
     st
