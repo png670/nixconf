@@ -36,7 +36,7 @@
       color7  = "#e0def4";
       color8  = "#6e6a86";
       color9  = "#eb6f92";
-      color10 = "#31748f";
+      color10 = "#98C379";
       color11 = "#f6c177";
       color12 = "#9ccfd8";
       color13 = "#c4a7e7";
