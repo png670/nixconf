@@ -28,7 +28,7 @@
 
       color0  = "#26233a";
       color1  = "#eb6f92";
-      color2  = "#31748f";
+      color2  = "#98C379";
       color3  = "#f6c177";
       color4  = "#9ccfd8";
       color5  = "#c4a7e7";

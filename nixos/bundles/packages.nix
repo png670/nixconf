@@ -23,7 +23,6 @@
     prismlauncher
     flameshot
     brightnessctl
-    nordic
     dunst
     picom
     kitty

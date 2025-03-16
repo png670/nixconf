@@ -9,5 +9,8 @@
     vesktop
     calcurse
     feh
+    
+    materia-theme
+    papirus-icon-theme
   ];
 }
