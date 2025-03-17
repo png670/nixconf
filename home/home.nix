@@ -3,8 +3,7 @@
 {
   imports =
     [
-      ./features
-      ./packages.nix
+      ./modules
 
     ];
 
@@ -19,6 +18,18 @@
   home.sessionVariables = {
      EDITOR = "nvim";
   };
+  home.packages = with pkgs; [
+    tree
+    playerctl
+    tree
+    nh
+    vesktop
+    calcurse
+    feh
+    
+    materia-theme
+    papirus-icon-theme
+  ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

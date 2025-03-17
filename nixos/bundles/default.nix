@@ -1,7 +1,6 @@
 {
   imports = [
-    ./desktop.nix
-    ./packages.nix
+    ./system.nix
     ./user.nix
   ];
 }

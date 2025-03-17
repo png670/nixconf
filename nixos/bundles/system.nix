@@ -21,6 +21,8 @@
   services = {
     displayManager.ly.enable = true;
     picom.enable = true;
+    udisks2.enable = true;
+    dbus.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -30,7 +32,11 @@
     };
   };
 
-  security.rtkit.enable = true;
+  security = {
+     rtkit.enable = true;
+     polkit.enable = true;
+
+  };
 
   hardware.opengl = {
     enable = true;
@@ -49,4 +55,50 @@
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 
+  ## Packages
+
+  environment.systemPackages = with pkgs; [
+    firefox
+    thunderbird
+    lf
+    wget
+    xclip
+    udiskie
+    zsh
+    tmux
+    alsa-utils
+    pamixer
+    htop
+    nh
+    neofetch
+    neovim
+    mesa
+    zlib
+    freetype
+    sxiv
+    mpv
+    prismlauncher
+    flameshot
+    brightnessctl
+    dunst
+    picom
+    kitty
+    lm_sensors
+    xorg.xkill
+    libnotify
+    gnome-system-monitor
+    nix-prefetch-git
+
+    #suckless
+    st
+    dunst
+    slock
+
+  ];
+  fonts.packages = with pkgs; [
+    hack-font
+    cm_unicode
+    terminus_font
+    libertinus
+  ];
 }
