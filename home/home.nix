@@ -26,9 +26,10 @@
     vesktop
     calcurse
     feh
-   
-   catppuccin-papirus-folders
-   catppuccin-gtk
+    
+    catppuccin-papirus-folders
+    catppuccin-gtk
+
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
