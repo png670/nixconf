@@ -26,9 +26,9 @@
     vesktop
     calcurse
     feh
-    
-    materia-theme
-    papirus-icon-theme
+   
+   catppuccin-papirus-folders
+   catppuccin-gtk
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

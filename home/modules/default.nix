@@ -5,5 +5,6 @@
     ./mpd.nix
     ./kitty.nix
     ./firefox.nix
+    ./gtk.nix
   ];
 }
