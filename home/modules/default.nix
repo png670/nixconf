@@ -7,5 +7,6 @@
     ./firefox.nix
     ./gtk.nix
     ./feh.nix
+    ./picom.nix
   ];
 }
