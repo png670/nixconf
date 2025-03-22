@@ -1,6 +1,6 @@
 
 {
-  description = "pngs nixos";
+  description = "My nix flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -23,7 +23,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };  # ✅ Corrected syntax
+        config = { allowUnfree = true; };  
       };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -31,7 +31,6 @@
           inherit system inputs user pkgs;
         };
         modules = [
-          ./unfree-merger.nix
           ./nixos/configuration.nix
         ];
       };
@@ -40,7 +39,6 @@
         inherit pkgs;
         extraSpecialArgs = { inherit user inputs system; };
         modules = [
-          ./unfree-merger.nix
           ./home/home.nix
         ];
       };

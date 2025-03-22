@@ -47,20 +47,20 @@ st      💄      # STICKY
 *.part		💔
 *.torrent	🔽
 # file extensions (images)
-*.png	       "🖼 "
-*.PNG	       "🖼 "
-*.webp	       "🖼 "
-*.tiff	       "🖼 "
-*.avif	       "🖼 "
-*.ico	       "🖼 "
+*.png	       🖼️
+*.PNG	       🖼️
+*.webp	      🖼️
+*.tiff	       🖼️
+*.avif	       🖼️
+*.ico	       🖼️
 *.jpg		📸
 *.JPG		📸
 *.jpe		📸
 *.jpeg		📸
 *.mjpg		📸
 *.mjpeg 	📸
-*.gif	       "🖼 "
-*.svg	       "🗺 "
+*.gif	       🖼️
+*.svg	       "🗺🖼️ "
 *.tif	       "🖼 "
 *.tiff	       "🖼 "
 *.xcf	       "🖌 "

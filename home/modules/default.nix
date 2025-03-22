@@ -6,5 +6,6 @@
     ./kitty.nix
     ./firefox.nix
     ./gtk.nix
+    ./feh.nix
   ];
 }

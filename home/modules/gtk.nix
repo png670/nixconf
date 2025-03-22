@@ -4,13 +4,13 @@
     enable = true;
 
     theme = {
-      name = "Catppuccin-Mocha-Standard-Blue-Dark";
-      package = pkgs.catppuccin-gtk;
+      name = "rose-pine";
+      package = pkgs.rose-pine-gtk-theme;
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders;
+      name = "rose-pine";
+      package = pkgs.rose-pine-icon-theme;
     };
   };
 }
