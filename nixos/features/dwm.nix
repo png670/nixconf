@@ -26,14 +26,4 @@ in {
     }))
   ];
 
-  systemd.services.dwmblocks = {
-    description = "dwmblocks status bar updater";
-    after = [ "graphical.target" ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      ExecStart = "/run/current-system/sw/bin/dwmblocks";
-      Restart = "always";
-      Environment = "DISPLAY=:0";
-    };
-  };
 }

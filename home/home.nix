@@ -25,6 +25,7 @@
     vesktop
     calcurse
     feh
+    zathura
     
   ];
   # Let Home Manager install and manage itself.

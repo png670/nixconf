@@ -20,6 +20,7 @@
 
   services = {
     displayManager.ly.enable = true;
+    xserver.displayManager.startx.enable = true;
     picom.enable = true;
     udisks2.enable = true;
     dbus.enable = true;
