@@ -1,6 +1,14 @@
 
-{ pkgs, lib, user, ... }: {
+{ config, pkgs, lib, user, inputs, outputs, myLib, ... }:
 
+{
+  imports = [
+    ./hardware-configuration.nix
+    
+    outputs.nixosModules.default
+  ];
+
+  ## System Settings
   time.timeZone = "Europe/London";
 
   i18n = {
@@ -18,9 +26,22 @@
     };
   };
 
+  ## Bootloader
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  ## Nix Settings
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  ## Services
   services = {
     displayManager.ly.enable = true;
     xserver.displayManager.startx.enable = true;
+    xserver.xkb = { # Keyboard Layout
+      layout = "gb";
+      variant = "";
+    };
+
     picom.enable = true;
     udisks2.enable = true;
     dbus.enable = true;
@@ -34,21 +55,31 @@
   };
 
   security = {
-     rtkit.enable = true;
-     polkit.enable = true;
-
+    rtkit.enable = true;
+    polkit.enable = true;
   };
 
+  ## Console Settings
+  console = {
+    useXkbConfig = true;
+    earlySetup = true;  # Required for GRUB
+  };
+
+  ## Hardware Acceleration
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
   };
 
+  ## Programs
   programs = {
     dconf.enable = true;
     direnv.enable = true;
+    zsh.enable = true;
+    nix-ld.enable = true;
   };
 
+  ## XDG Portal
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -56,8 +87,16 @@
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
 
-  ## Packages
+  ## User Configuration
+  users.users.png76 = {
+    isNormalUser = true;
+    description = "png76";
+    extraGroups = [ "wheel" ];
+    packages = with pkgs; [];
+    shell = pkgs.zsh;  # Default shell
+  };
 
+  ## System Packages
   environment.systemPackages = with pkgs; [
     firefox
     thunderbird
@@ -89,16 +128,20 @@
     gnome-system-monitor
     nix-prefetch-git
 
-    #suckless
+    # Suckless utilities
     st
     dunst
     slock
-
   ];
+
+  ## Fonts
   fonts.packages = with pkgs; [
     hack-font
     cm_unicode
     terminus_font
     libertinus
   ];
+
+  ## System Version (Do not modify)
+  system.stateVersion = "23.05";
 }

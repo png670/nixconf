@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, outputs ... }:
 
 {
   imports =
     [
-      ./modules
+      outputs.homeManagerModules.default
 
     ];
 

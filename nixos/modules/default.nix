@@ -4,6 +4,5 @@
     ./performance.nix
     ./networking.nix
     ./dwm.nix
-    ./fprintd.nix
   ];
 }

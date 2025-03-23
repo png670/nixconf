@@ -1,9 +1,9 @@
 
 {
-  description = "My nix flake";
+  description = "Gpt's NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -16,30 +16,27 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
-    let
-      user = "png76";
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = { allowUnfree = true; };  
-      };
-    in {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit system inputs user pkgs;
-        };
-        modules = [
-          ./nixos/configuration.nix
-        ];
+  outputs = {...} @ inputs: let
+    # Boilerplate-reducing lib with helper functions
+    myLib = import ./myLib/default.nix {inherit inputs;};
+  in
+    with myLib; {
+      nixosConfigurations = {
+        # ===================== NixOS Configurations ===================== #
+
+        laptop = mkSystem ./hosts/laptop/configuration.nix;
+        #        desktop = mkSystem ./hosts/desktop/configuration.nix; # Fixed path
       };
 
-      homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit user inputs system; };
-        modules = [
-          ./home/home.nix
-        ];
+      homeConfigurations = {
+        # ================ Maintained Home Configurations ================ #
+
+        "png76-laptop" = mkHome "x86_64-linux" ./hosts/laptop/home.nix;
+        #        "png76-desktop" = mkHome "x86_64-linux" ./hosts/desktop/home.nix; # Fixed path
       };
+
+      # Modules for NixOS and Home-Manager
+      homeManagerModules.default = ./home/modules;
+      nixosModules.default = ./nixos/modules;
     };
 }
