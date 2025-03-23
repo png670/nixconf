@@ -3,11 +3,6 @@
   myLib = (import ./default.nix) {inherit inputs;};
   outputs = inputs.self.outputs;
 in rec {
-  # ================================================================ #
-  # =                            My Lib                            = #
-  # ================================================================ #
-
-  # ======================= Package Helpers ======================== #
 
   pkgsFor = sys: inputs.nixpkgs.legacyPackages.${sys};
 
@@ -36,7 +31,6 @@ in rec {
       ];
     };
 
-  # =========================== Helpers ============================ #
 
   filesIn = dir: (map (fname: dir + "/${fname}")
     (builtins.attrNames (builtins.readDir dir)));
@@ -47,9 +41,6 @@ in rec {
 
   fileNameOf = path: (builtins.head (builtins.split "\\." (baseNameOf path)));
 
-  # ========================== Extenders =========================== #
-
-  # Evaluates nixos/home-manager module and extends its options / config
   extendModule = {path, ...} @ args: {pkgs, ...} @ margs: let
     eval =
       if (builtins.isString path) || (builtins.isPath path)
@@ -82,9 +73,6 @@ in rec {
       else (eval.config or evalNoImports);
   };
 
-  # Applies extendModules to all modules
-  # modules can be defined in the same way
-  # as regular imports, or taken from "filesIn"
   extendModules = extension: modules:
     map
     (f: let
