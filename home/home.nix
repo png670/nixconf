@@ -20,12 +20,10 @@
   };
   home.packages = with pkgs; [
     tree
-    playerctl
     nh
     vesktop
     calcurse
     feh
-    zathura
     
   ];
   # Let Home Manager install and manage itself.

@@ -24,7 +24,6 @@
     picom.enable = true;
     udisks2.enable = true;
     dbus.enable = true;
-    flatpak.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -67,7 +66,6 @@
     xclip
     udiskie
     zsh
-    tmux
     alsa-utils
     pamixer
     htop
