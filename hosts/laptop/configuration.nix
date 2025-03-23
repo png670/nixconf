@@ -26,6 +26,8 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   ## Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -125,7 +127,7 @@
     lm_sensors
     xorg.xkill
     libnotify
-    gnome-system-monitor
+    obsidian
     nix-prefetch-git
 
     # Suckless utilities
@@ -137,7 +139,6 @@
   ## Fonts
   fonts.packages = with pkgs; [
     hack-font
-    cm_unicode
     terminus_font
     libertinus
   ];

@@ -21,7 +21,6 @@
   home.packages = with pkgs; [
     tree
     nh
-    vesktop
     calcurse
     feh
     
