@@ -118,7 +118,7 @@
     freetype
     sxiv
     mpv
-    prismlauncher
+    (prismlauncher.override { jdks = [ jdk21 ]; })
     flameshot
     brightnessctl
     dunst

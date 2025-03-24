@@ -6,7 +6,7 @@
     #cpuFreqGovernor = "schedutil";
   };
   services.power-profiles-daemon.enable = false;
-#  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.enable = true;
 #  services.auto-cpufreq.settings = {
 #	  battery = {
 #	     governor = "powersave";
@@ -30,9 +30,9 @@
   ];
 
   ### TLP
-  services.tlp = {
-      enable = true;
-  };
+  #  services.tlp = {
+  #    enable = true;
+  #};
 
   ### SYSTEM 76 SCHEDULER
   services.system76-scheduler.settings.cfsProfiles.enable = true;

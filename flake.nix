@@ -24,14 +24,14 @@
       nixosConfigurations = {
         # NixOS Configurations
 
-        laptop = mkSystem ./hosts/laptop/configuration.nix;
+        nixos = mkSystem ./hosts/laptop/configuration.nix;
         #        desktop = mkSystem ./hosts/desktop/configuration.nix; # Will be used in the future
       };
 
       homeConfigurations = {
         # Maintained Home Configurations 
 
-        "png76-laptop" = mkHome "x86_64-linux" ./hosts/laptop/home.nix;
+        "png76" = mkHome "x86_64-linux" ./hosts/laptop/home.nix;
         #        "png76-desktop" = mkHome "x86_64-linux" ./hosts/desktop/home.nix; # Will be used in the future
       };
 
