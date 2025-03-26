@@ -31,6 +31,7 @@
   ## Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   ## Nix Settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -100,7 +101,6 @@
 
   ## System Packages
   environment.systemPackages = with pkgs; [
-    firefox
     thunderbird
     lf
     wget

@@ -5,8 +5,8 @@ let
   suckless = pkgs.fetchFromGitHub {
     owner = "png670";
     repo = "dwm";
-    rev = "70f2c790c0bd2bc76e32d282aa3d0f58f1c53767";
-    hash = "sha256-03KArYMi+dFWlquSJ7kJVwaQkPcVg1pcpCvZqBqAV8M=";
+    rev = "7cf898f7cd190eac2718fcfd830022957a87fbe3";
+    hash = "sha256-LwksrbeJbw2wQTyRyCTySvonvsSJ98tbpj7tDngdLaU=";
   };
 in {
   services.xserver.enable = true;

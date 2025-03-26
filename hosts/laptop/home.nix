@@ -23,6 +23,7 @@
     nh
     calcurse
     feh
+    librewolf
     
   ];
   # Let Home Manager install and manage itself.

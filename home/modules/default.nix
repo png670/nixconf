@@ -4,7 +4,6 @@
     ./git.nix
     ./mpd.nix
     ./kitty.nix
-    ./firefox.nix
     ./gtk.nix
   ];
 }
