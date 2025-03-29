@@ -4,6 +4,6 @@
     ./performance.nix
     ./networking.nix
 #    ./dwm.nix
-    ./xmonad.nix
+#    ./xmonad.nix
   ];
 }

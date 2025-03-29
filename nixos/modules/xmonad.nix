@@ -5,22 +5,23 @@ let
   xmonadconfig = pkgs.fetchFromGitHub {
     owner = "png670";
     repo = "xmonad";
-    rev = "113fa43e4539de31493c00f9036d62572a8d52ec";
-    hash = "sha256-sy8EwJL/qQQmE4v1aneqnxHZMHFCs6LWK6hX+7FxCgQ=";
+    rev = "d15be84caf3153f17d5fec94be54df8bf53ccb44";
+    hash = "sha256-tYouKuCA9KLbjLYHYqk8V1Kkp6W7ZaRXUOM3UCsrkME=";
   };
 
-  xmonadpkg = pkgs.xmonad-with-packages.override {
-    extraPackages = hpkgs: with hpkgs; [
-      xmonad-contrib
-      xmonad-extras
-      dbus
-    ];
-  };
 in {
-  services.xserver.enable = true;
-  services.xserver.windowManager.xmonad = {
+  services.xserver = {
     enable = true;
-    package = xmonadpkg;
-    config = "${xmonadconfig}/xmonad.hs";
+    displayManager.defaultSession = "none+xmonad";
+    desktopManager = {
+      xterm.enable = false;
+    };
+    windowManager = {
+      xmonad = {
+        enable = true;
+        enableContribAndExtras = true;
+        extraPackages = pkgs: [ pkgs.xmobar ];  # Fixed the extraPackages line
+      };
+    };
   };
 }

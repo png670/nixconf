@@ -133,7 +133,10 @@
     obsidian
     nix-prefetch-git
 
-    # Suckless utilities
+    haskellPackages.xmonad-contrib
+    haskellPackages.xmobar
+
+    dmenu
     dunst
     slock
   ];
