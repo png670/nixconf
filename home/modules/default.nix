@@ -5,5 +5,6 @@
     ./mpd.nix
     ./kitty.nix
     ./gtk.nix
+    ./zsh
   ];
 }

@@ -26,6 +26,7 @@
     librewolf
     
   ];
+  home.file."/.config/dwm/dwm".source = /home/png76/.config/dwm/dwm;
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

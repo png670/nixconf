@@ -1,10 +1,10 @@
 
-{ config, pkgs, lib, user, inputs, outputs, myLib, ... }:
+{ config, pkgs, lib, user, outputs, myLib, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
-    
+
     outputs.nixosModules.default
   ];
 
@@ -125,13 +125,15 @@
     picom
     kitty
     lm_sensors
+
     xorg.xkill
+    xorg.libX11
     libnotify
+
     obsidian
     nix-prefetch-git
 
     # Suckless utilities
-    st
     dunst
     slock
   ];

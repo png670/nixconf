@@ -2,6 +2,7 @@
 {inputs}: let
   myLib = (import ./default.nix) {inherit inputs;};
   outputs = inputs.self.outputs;
+  user = "png76"; # CHANGE ME
 in rec {
 
   pkgsFor = sys: inputs.nixpkgs.legacyPackages.${sys};
@@ -11,7 +12,7 @@ in rec {
   mkSystem = config:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
-        inherit inputs outputs myLib;
+        inherit inputs outputs myLib user;
       };
       modules = [
         config
@@ -23,7 +24,7 @@ in rec {
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = pkgsFor sys;
       extraSpecialArgs = {
-        inherit inputs myLib outputs;
+        inherit inputs myLib outputs user;
       };
       modules = [
         config
