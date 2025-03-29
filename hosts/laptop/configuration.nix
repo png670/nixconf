@@ -36,6 +36,14 @@
   ## Nix Settings
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  services.xserver.windowManager.xmonad = {
+    enable = true;
+    enableContribAndExtras = true;
+    config = "./xmonad/xmonad.hs";
+  };
+
+
+
   ## Services
   services = {
     displayManager.ly.enable = true;
@@ -127,12 +135,14 @@
     lm_sensors
 
     xorg.xkill
+    xorg.xauth
     xorg.libX11
     libnotify
 
     obsidian
     nix-prefetch-git
 
+    haskellPackages.xmonad
     haskellPackages.xmonad-contrib
     haskellPackages.xmobar
 
