@@ -39,14 +39,16 @@
   services.xserver.windowManager.xmonad = {
     enable = true;
     enableContribAndExtras = true;
-    config = "./xmonad/xmonad.hs";
+    config = builtins.readFile /home/png76/.config/xmonad/xmonad.hs;
   };
 
-
+#  displayManager = { defaultSession = "none+xmonad"; };
 
   ## Services
   services = {
     displayManager.ly.enable = true;
+    displayManager = { defaultSession = "none+xmonad"; };
+    xserver.enable = true;
     xserver.displayManager.startx.enable = true;
     xserver.xkb = { # Keyboard Layout
       layout = "gb";
@@ -139,12 +141,10 @@
     xorg.libX11
     libnotify
 
+    xmobar
+
     obsidian
     nix-prefetch-git
-
-    haskellPackages.xmonad
-    haskellPackages.xmonad-contrib
-    haskellPackages.xmobar
 
     dmenu
     dunst
@@ -153,7 +153,9 @@
 
   ## Fonts
   fonts.packages = with pkgs; [
-    hack-font
+    font-awesome
+    iosevka
+#    hack-font
     terminus_font
     libertinus
   ];

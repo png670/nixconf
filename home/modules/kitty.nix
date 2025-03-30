@@ -8,40 +8,47 @@
     enable = true;
 
     settings = {
-      background = "#191724";
-      foreground = "#e0def4";
-      selection_foreground = "#e0def4";
-      selection_background = "#403d52";
+      background = "#0b0806";
+      foreground = "#a19782";
+      selection_foreground = "#a19782";
+      selection_background = "#373b41";
 
-      cursor = "#524f67";
-      cursor_text_color = "#e0def4";
+      cursor = "#844d2c";
+      cursor_text_color = "#1d2021";
 
-      url_color = "#c4a7e7";
+      url_color = "#b4b7b4";
 
-      active_tab_foreground = "#e0def4";
-      active_tab_background = "#26233a";
-      inactive_tab_foreground = "#6e6a86";
-      inactive_tab_background = "#191724";
+      active_tab_foreground = "#a19782";
+      active_tab_background = "#282a2e";
+      inactive_tab_foreground = "#718062";
+      inactive_tab_background = "#2f2b2a";
 
-      active_border_color = "#31748f";
-      inactive_border_color = "#403d52";
+      active_border_color = "#526274";
+      inactive_border_color = "#373b41";
 
-      color0  = "#26233a";
-      color1  = "#eb6f92";
-      color2  = "#98C379";
-      color3  = "#f6c177";
-      color4  = "#9ccfd8";
-      color5  = "#c4a7e7";
-      color6  = "#c4a7e7";
-      color7  = "#e0def4";
-      color8  = "#6e6a86";
-      color9  = "#eb6f92";
-      color10 = "#98C379";
-      color11 = "#f6c177";
-      color12 = "#9ccfd8";
-      color13 = "#c4a7e7";
-      color14 = "#c4a7e7";
-      color15 = "#e0def4";
+      color0  = "#0b0806";
+      color1  = "#844d2c";
+      color2  = "#57553a";
+      color3  = "#a17c38";
+      color4  = "#41434f";
+      color5  = "#6b4444";
+      color6  = "#59664c";
+      color7  = "#a19782";
+      color8  = "#2f2b2a";
+      color9  = "#a64848";
+      color10 = "#897f5a";
+      color11 = "#c8b38d";
+      color12 = "#526274";
+      color13 = "#755c47";
+      color14 = "#718062";
+      color15 = "#c1ab83";
+
+      color16 = "#de935f";
+      color17 = "#a3685a";
+      color18 = "#282a2e";
+      color19 = "#373b41";
+      color20 = "#b4b7b4";
+      color21 = "#e0e0e0";
 
       background_opacity = "0.9";
 
