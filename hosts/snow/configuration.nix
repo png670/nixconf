@@ -10,7 +10,7 @@
     swindle.enable = true;
 
     security = {
-      does.enable = true;
+      doas.enable = true;
       firewall.enable = true;
       gpg.enable = true;
       openvpn.enable = false;
