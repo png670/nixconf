@@ -1,0 +1,36 @@
+#!/bin/mksh
+
+# Default programs:
+export BROWSER="firefox"
+export TERMINAL="foot"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export PAGER="less"
+
+# ~/ Clean-up:
+export PATH=$PATH:~/.local/bin/statusbar:$HOME/.local/share/flatpak/exports/bin:/var/lib/flatpak/exports/bin
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_DIRS=$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_DIRS
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export GOPATH="$XDG_DATA_HOME/go"
+export LESSHISTFILE="-"
+
+# Other program settings:
+export XKB_DEFAULT_LAYOUT=gb
+export MOZ_ACCELERATED=0
+export _JAVA_AWT_WM_NONREPARENTING=1
+export MUSICDIR="$HOME/Music"
+export CM_SELECTIONS="clipboard"
+export LESS=-R
+export LESS_TERMCAP_mb=$(printf '\033[1;31m')
+export LESS_TERMCAP_md=$(printf '\033[1;36m')
+export LESS_TERMCAP_me=$(printf '\033[0m')
+export LESS_TERMCAP_so=$(printf '\033[01;44;33m')
+export LESS_TERMCAP_se=$(printf '\033[0m')
+export LESS_TERMCAP_us=$(printf '\033[1;32m')
+export LESS_TERMCAP_ue=$(printf '\033[0m')
