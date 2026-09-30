@@ -8,6 +8,14 @@
     bluetooth.enable = false;
     flatpak.enable = true;
     swindle.enable = true;
+
+    security = {
+      does.enable = true;
+      firewall.enable = true;
+      gpg.enable = true;
+      openvpn.enable = false;
+      sshd.enable = false;
+    };
   };
 
   users.users.png76 = {
