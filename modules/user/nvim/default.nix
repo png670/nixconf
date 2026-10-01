@@ -11,6 +11,5 @@ in
 
     xdg.configFile."nvim/init.lua".source = ./config/init.lua;
     xdg.configFile."nvim/lua".source = ./config/lua;
-    xdg.dataFile."nvim/site/autoload/plug.vim".source = ./config/plug.vim;
   };
 }
