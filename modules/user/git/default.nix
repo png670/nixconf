@@ -10,12 +10,12 @@ in
     home.packages = [ pkgs.gh ];
     programs.git = {
       enable = true;
-      userName = "png670";
-      userEmail = "png6760@gmail.com";
-
       lfs.enable = true;
 
-      extraConfig = {
+      settings = {
+        user.name = "png670";
+        user.email = "png6760@gmail.com";
+
         init.defaultBranch = "main";
 	# other things
       };
