@@ -43,7 +43,6 @@ require("options")
 require("keymaps")
 
 -- Plugin configurations
-require("plugins.colorizer")
 require("plugins.lualine")
 require("plugins.nvim-tree")
 require("plugins.which-key")
