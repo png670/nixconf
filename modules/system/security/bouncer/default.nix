@@ -1,13 +1,13 @@
 { config, lib, pkgs, ... }:
 
 let
-  cfg = config.systemSettings.soju;
+  cfg = config.systemSettings.security.bouncer;
   r = cfg.remote;
   routerCfg = config.systemSettings.security.router;
 in
 {
-  options.systemSettings.soju = {
-    enable = lib.mkEnableOption "a soju IRC bouncer on this host";
+  options.systemSettings.security.bouncer = {
+    enable = lib.mkEnableOption "enable soju on this host";
 
     port = lib.mkOption {
       type = lib.types.port;
@@ -15,7 +15,7 @@ in
     };
 
     remote = {
-      enable = lib.mkEnableOption "exposing the bouncer through nginx";
+      enable = lib.mkEnableOption "exposing the bouncer through nginx with a real TLS cert";
 
       zoneDomain = lib.mkOption {
         type = lib.types.str;
@@ -51,7 +51,7 @@ in
       assertions = [
         {
           assertion = routerCfg.enable;
-          message = "systemSettings.soju needs systemSettings.security.router.enable, since it scopes its firewall rules to the router's interfaces.";
+          message = "systemSettings.security.bouncer needs systemSettings.security.router.enable, since it scopes its firewall rules to the router's interfaces.";
         }
       ];
 
@@ -70,7 +70,7 @@ in
         description = "Keep ${r.hostName}'s Cloudflare A record pointed at this house's public IP";
         path = [ pkgs.curl pkgs.jq ];
         serviceConfig.Type = "oneshot";
-        script = '' # what the fuckkk
+        script = '' # what the fuckkkk
           set -eu
           . ${r.cloudflareEnvFile}
           ip=$(curl -fsS https://api.ipify.org)
