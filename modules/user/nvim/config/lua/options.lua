@@ -28,7 +28,6 @@ vim.opt.ruler = false
 vim.opt.showcmd = false
 vim.opt.showmode = false
 
--- New: quality-of-life defaults that weren't set before.
 vim.opt.undofile = true    -- undo history survives closing the file
 vim.opt.updatetime = 250   -- faster CursorHold events (diagnostics, gitsigns)
 vim.opt.signcolumn = "yes" -- gutter reserved up front, text doesn't shift

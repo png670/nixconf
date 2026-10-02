@@ -9,7 +9,6 @@ map("n", "<leader>u", ':silent !xdg-open "<cWORD>" &<CR>', "Open URL under curso
 -- map("n", "<leader>f", ":NvimTreeFocus<CR>")
 -- map("n", "<leader>t", ":NvimTreeToggle<CR>")
 
--- New: quality-of-life bindings that weren't set before.
 map("n", "<Esc>", ":nohlsearch<CR>", "Clear search highlight")
 map("n", "<C-h>", "<C-w>h", "Window left")
 map("n", "<C-j>", "<C-w>j", "Window down")
