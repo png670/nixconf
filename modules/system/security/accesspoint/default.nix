@@ -58,7 +58,7 @@ in
         networks.${cfg.interface} = {
           ssid = cfg.ssid;
           authentication = {
-            mode = "wpa2-sha256";
+            mode = "wpa2-sha1";
           } // (
             if cfg.passwordFile != null
             then { wpaPasswordFile = cfg.passwordFile; }
