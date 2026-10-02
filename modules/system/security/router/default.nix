@@ -39,13 +39,15 @@ in
   config = lib.mkIf cfg.enable {
     boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
-    networking.interfaces.${cfg.lanInterface}.useDHCP = false;
-    networking.interfaces.${cfg.lanInterface}.ipv4.addresses = [
-      {
-        address = cfg.lanAddress;
-        prefixLength = cfg.lanPrefixLength;
-      }
-    ];
+    networking.interfaces.${cfg.lanInterface} = {
+      useDHCP = false;
+      ipv4.addresses = [
+        {
+          address = cfg.lanAddress;
+          prefixLength = cfg.lanPrefixLength;
+        }
+      ];
+    };
 
     networking.interfaces.${cfg.wanInterface}.useDHCP = true;
 
@@ -69,7 +71,9 @@ in
       };
     };
 
-    networking.firewall.interfaces.${cfg.lanInterface}.allowedTCPPorts = [ 22 53 ];
-    networking.firewall.interfaces.${cfg.lanInterface}.allowedUDPPorts = [ 53 67 ];
+    networking.firewall.interfaces.${cfg.lanInterface} = {
+      allowedTCPPorts = [ 22 53 ];
+      allowedUDPPorts = [ 53 67 ];
+    };
   };
 }

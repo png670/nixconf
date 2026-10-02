@@ -10,7 +10,12 @@
 
     security = {
       doas.enable = true;
-      sshd.enable = true;
+      sshd = {
+        enable = true;
+        authorizedKeys = [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICEFoA1Wtp+Z+sN/ltu4DSKCZxa4GS8C07DqHVZb+wex png76@snow"
+        ];
+      };
 
       router = {
         enable = true;
@@ -32,9 +37,6 @@
   users.users.png76 = {
     description = "png76";
     shell = pkgs.mksh;
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICEFoA1Wtp+Z+sN/ltu4DSKCZxa4GS8C07DqHVZb+wex png76@snow"
-    ];
   };
 
   boot.loader.efi.canTouchEfiVariables = false;
