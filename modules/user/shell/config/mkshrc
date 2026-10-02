@@ -40,9 +40,6 @@ lfcd() {
 alias calc='bc -lq'
 fzfcd() { cd "$(dirname "$(fzf)")"; }
 
-# vi mode 
-set -o vi
-
 # Stopwatch and countdown 
 countdown() {
 	start="$(( $(date '+%s') + $1 ))"
