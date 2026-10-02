@@ -57,6 +57,7 @@
   # — interfaces are addressed declaratively by the router module instead,
   # so the legacy global DHCP client shouldn't also be racing for them.
   networking.useDHCP = false;
+  networking.enableIPv6 = false;
 
   system.stateVersion = "26.05";
 }
