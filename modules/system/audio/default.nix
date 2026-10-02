@@ -1,19 +1,26 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
+let
+  cfg = config.systemSettings.audio;
+in
 {
-  environment.systemPackages = with pkgs; [
-    alsa-utils
-    mpv
-    pavucontrol
-  ];
+  options.systemSettings.audio.enable = lib.mkEnableOption "PipeWire audio stack and desktop audio utilities";
 
-  security.rtkit.enable = true;
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [
+      alsa-utils
+      mpv
+      pavucontrol
+    ];
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
+    security.rtkit.enable = true;
+
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
   };
 }

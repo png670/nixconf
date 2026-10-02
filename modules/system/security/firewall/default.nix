@@ -5,7 +5,6 @@ let
 in {
   options = {
     systemSettings.security.firewall = {
-      # TODO make this more granular and better :|
       enable = lib.mkEnableOption "Actvate firewall with ports open only for syncthing";
     };
   };
