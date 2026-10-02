@@ -70,7 +70,7 @@ in
       systemd.services.cloudflare-ddns = {
         path = [ pkgs.curl pkgs.jq ];
         serviceConfig.Type = "oneshot";
-        script = '' # what the fuckkkk
+        script = '' # what the fuckkk
           set -eu
           . ${r.cloudflareEnvFile}
           ip=$(curl -fsS https://api.ipify.org)
@@ -99,7 +99,13 @@ in
           dnsProvider = "cloudflare";
           environmentFile = r.cloudflareEnvFile;
           reloadServices = [ "nginx" ];
+          group = "nginx";
         };
+      };
+
+      systemd.services.nginx = {
+        after = [ "acme-${r.hostName}.service" ];
+        wants = [ "acme-${r.hostName}.service" ];
       };
 
       services.nginx = {
