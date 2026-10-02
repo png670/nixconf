@@ -37,7 +37,7 @@ in
 
     channel = lib.mkOption {
       type = lib.types.int;
-      default = 6;
+      default = 36;
     };
   };
 
