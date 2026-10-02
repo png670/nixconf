@@ -19,7 +19,7 @@
 
       router = {
         enable = true;
-        wanInterface = "end0"; 
+        wanInterface = "enabcm6e4e10"; 
         lanInterface = "wlan0"; 
       };
 
@@ -42,6 +42,7 @@
   boot.loader.efi.canTouchEfiVariables = false;
 
   hardware.enableRedistributableFirmware = true;
+  hardware.firmware = [ pkgs.raspberrypiWirelessFirmware ];
 
   # — interfaces are addressed declaratively by the router module instead,
   # so the legacy global DHCP client shouldn't also be racing for them.
