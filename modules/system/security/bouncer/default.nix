@@ -92,9 +92,11 @@ in
         };
       };
 
+
       security.acme = {
         acceptTerms = true;
         defaults.email = r.acmeEmail;
+        defaults.dnsResolver = "1.1.1.1:53";
         certs.${r.hostName} = {
           dnsProvider = "cloudflare";
           environmentFile = r.cloudflareEnvFile;
