@@ -1,8 +1,3 @@
-# Based on the actual install: a single USB drive (GPT) holding the pftf/RPi4
-# UEFI firmware + Limine on a FAT32 ESP, and an ext4 root partition — see the
-# install notes. Mounted by label rather than /dev/sdX or UUID since this is
-# removable USB media and by-label survives it enumerating on a different
-# port/order than it did during install.
 { lib, ... }:
 
 {

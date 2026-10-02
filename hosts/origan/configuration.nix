@@ -29,6 +29,16 @@
         ssid = "origan";
         passwordFile = "/etc/secrets/pass";
       };
+
+      bouncer = {
+        enable = true;
+        remote = {
+          enable = true;
+          zoneDomain = "png76.xyz";
+          hostName = "home.png76.xyz";
+          acmeEmail = "jglaf7uoe@mozmail.com";
+        };
+      };
     };
   };
 
