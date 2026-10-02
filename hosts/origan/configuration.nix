@@ -26,7 +26,7 @@
       accessPoint = {
         enable = true;
         interface = "wlan0";
-        ssid = "ML6661458";
+        ssid = "origan";
         passwordFile = "/etc/secrets/pass";
       };
     };
