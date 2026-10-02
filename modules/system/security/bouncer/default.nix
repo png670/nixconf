@@ -56,6 +56,7 @@ in
       ];
 
       services.soju.enable = true;
+      services.soju.adminSocket.enable = true;
     }
 
     (lib.mkIf (!r.enable) {
@@ -64,10 +65,9 @@ in
     })
 
     (lib.mkIf r.enable {
-      services.soju.listen = [ "irc://127.0.0.1:${toString cfg.port}" ];
+      services.soju.listen = [ "irc://localhost:${toString cfg.port}" ];
 
       systemd.services.cloudflare-ddns = {
-        description = "Keep ${r.hostName}'s Cloudflare A record pointed at this house's public IP";
         path = [ pkgs.curl pkgs.jq ];
         serviceConfig.Type = "oneshot";
         script = '' # what the fuckkkk
