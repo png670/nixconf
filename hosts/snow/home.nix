@@ -14,7 +14,7 @@
       enable = true;
       address = "home.png76.xyz:6697";
       nick = "png76";
-      passwordCommand = "cat ~/.config/pass";
+      passwordCommand = [ "cat" "/home/png76/.config/pass" ];
     };
   };
 
