@@ -19,7 +19,7 @@
 
       router = {
         enable = true;
-        wanInterface = "enabcm6e4e10"; 
+        wanInterface = "enabcm6e4ei0"; 
         lanInterface = "wlan0"; 
       };
 
