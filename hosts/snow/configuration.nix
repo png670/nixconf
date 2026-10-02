@@ -15,6 +15,7 @@
       gpg.enable = true;
       openvpn.enable = false;
       sshd.enable = false;
+      automount.enable = true;
     };
   };
 
