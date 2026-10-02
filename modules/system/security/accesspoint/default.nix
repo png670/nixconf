@@ -32,12 +32,12 @@ in
 
     band = lib.mkOption {
       type = lib.types.enum [ "2g" "5g" ];
-      default = "5g";
+      default = "2g";
     };
 
     channel = lib.mkOption {
       type = lib.types.int;
-      default = 36;
+      default = 6;
     };
   };
 
