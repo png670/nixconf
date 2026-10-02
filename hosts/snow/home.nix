@@ -9,6 +9,13 @@
     rofi.enable = true;
     waybar.enable = true;
     git.enable = true;
+
+    senpai = {
+      enable = true;
+      address = "home.png76.xyz:6697";
+      nick = "png76";
+      passwordCommand = "cat ~/.config/pass"
+    }
   };
 
   home.stateVersion = "26.05";
