@@ -16,7 +16,7 @@ in
     };
 
     passwordCommand = lib.mkOption {
-      type = lib.types.str;
+      type = lib.types.listOf lib.types.str;
     };
   };
 
@@ -29,6 +29,7 @@ in
         username = cfg.nick;
         password-cmd = cfg.passwordCommand;
         tls = true;
+        pane-widths.channels = 0;
       };
     };
   };
