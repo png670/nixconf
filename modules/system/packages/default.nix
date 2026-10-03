@@ -6,6 +6,7 @@
     thunar
     vesktop
     ufetch
+    anki
   ];
 
   fonts.packages = with pkgs; [
