@@ -51,7 +51,7 @@
 
   services.openssh.openFirewall = false;
 
-  services.hostapd.radios.wlan0.wifi5.operatingChannelWidth = 20;
+  services.hostapd.radios.wlan0.wifi5.operatingChannelWidth = "20or40";
 
   users.users.png76 = {
     description = "png76";

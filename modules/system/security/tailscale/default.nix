@@ -6,14 +6,14 @@ let
 in
 {
   options.systemSettings.security.tailscale = {
-    enable = lib.mkEnableOption "Enable tailscale on this host";
+    enable = lib.mkEnableOption "Tailscale on this host";
 
     authKeyFile = lib.mkOption {
       type = lib.types.path;
       default = "/etc/secrets/tailscale-authkey";
     };
 
-    advertiseLanRoutes = lib.mkEnableOption;
+    advertiseLanRoutes = lib.mkEnableOption "advertising this router's LAN as a Tailscale subnet route";
   };
 
   config = lib.mkIf cfg.enable {
