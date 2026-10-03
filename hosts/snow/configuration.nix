@@ -19,6 +19,7 @@
       openvpn.enable = false;
       sshd.enable = false;
       automount.enable = true;
+      tailscale.enable = true;
     };
   };
 
