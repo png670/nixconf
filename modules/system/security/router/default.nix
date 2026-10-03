@@ -30,6 +30,11 @@ in
       default = "192.168.50.50,192.168.50.200,24h";
     };
 
+    lanNetwork = lib.mkOption {
+      type = lib.types.str;
+      default = "192.168.50.0/24";
+    };
+
     upstreamDns = lib.mkOption {
       type = lib.types.listOf lib.types.str;
       default = [ "1.1.1.1" "9.9.9.9" ];

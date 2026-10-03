@@ -28,6 +28,8 @@
         interface = "wlan0";
         ssid = "origan";
         passwordFile = "/etc/secrets/pass";
+  	band = "5g";
+ 	channel = 36;
       };
 
       bouncer = {
@@ -39,10 +41,17 @@
           acmeEmail = "jglaf7uoe@mozmail.com";
         };
       };
+
+      tailscale = {
+        enable = true;
+        advertiseLanRoutes = true;
+      };
     };
   };
 
   services.openssh.openFirewall = false;
+
+  services.hostapd.radios.wlan0.wifi5.operatingChannelWidth = 20;
 
   users.users.png76 = {
     description = "png76";
