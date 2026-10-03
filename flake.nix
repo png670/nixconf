@@ -10,10 +10,15 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    inputs@{ nixpkgs, flake-parts, home-manager, ... }:
+    inputs@{ nixpkgs, flake-parts, home-manager, sops-nix, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" ];
 
@@ -29,7 +34,6 @@
         let
           lib = nixpkgs.lib;
 
-          # Every directory under ./hosts is a machine
           hosts = builtins.attrNames (
             lib.filterAttrs (_: type: type == "directory") (builtins.readDir ./hosts)
           );
@@ -45,8 +49,9 @@
                   { networking.hostName = host; }
                   (./hosts + "/${host}")
 
-                  # shared modules, imported from modules/system/*/default.nix
                   ./modules/system
+
+                  sops-nix.nixosModules.sops
 
                   home-manager.nixosModules.home-manager
                   {

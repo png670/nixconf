@@ -10,7 +10,6 @@ in
 
     authKeyFile = lib.mkOption {
       type = lib.types.path;
-      default = "/etc/secrets/tailscale-authkey";
     };
 
     advertiseLanRoutes = lib.mkEnableOption "advertising this router's LAN as a Tailscale subnet route";

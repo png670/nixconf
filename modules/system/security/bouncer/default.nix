@@ -31,7 +31,6 @@ in
 
       cloudflareEnvFile = lib.mkOption {
         type = lib.types.path;
-        default = "/etc/secrets/cloudflare-env";
       };
 
       port = lib.mkOption {

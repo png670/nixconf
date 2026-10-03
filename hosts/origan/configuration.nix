@@ -1,6 +1,16 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    age.keyFile = "/var/lib/sops-nix/key.txt";
+    secrets = {
+      "wifi-pass" = { };
+      "cloudflare-env" = { };
+      "tailscale-authkey" = { };
+    };
+  };
+
   systemSettings = {
     users = [ "png76" ];
     adminUsers = [ "png76" ];
@@ -27,7 +37,7 @@
         enable = true;
         interface = "wlan0";
         ssid = "origan";
-        passwordFile = "/etc/secrets/pass";
+        passwordFile = config.sops.secrets."wifi-pass".path;
   	band = "5g";
  	channel = 36;
       };
@@ -39,12 +49,14 @@
           zoneDomain = "png76.xyz";
           hostName = "home.png76.xyz";
           acmeEmail = "jglaf7uoe@mozmail.com";
+          cloudflareEnvFile = config.sops.secrets."cloudflare-env".path;
         };
       };
 
       tailscale = {
         enable = true;
         advertiseLanRoutes = true;
+        authKeyFile = config.sops.secrets."tailscale-authkey".path;
       };
     };
   };

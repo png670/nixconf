@@ -1,6 +1,12 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    age.keyFile = "/var/lib/sops-nix/key.txt";
+    secrets."tailscale-authkey" = { };
+  };
+
   systemSettings = {
     users = [ "png76" ];
     adminUsers = [ "png76" ];
@@ -17,9 +23,12 @@
       firewall.enable = true;
       gpg.enable = true;
       openvpn.enable = false;
-      sshd.enable = false;
+      sshd.enable = true;
       automount.enable = true;
-      tailscale.enable = true;
+      tailscale = {
+        enable = true;
+        authKeyFile = config.sops.secrets."tailscale-authkey".path;
+      };
     };
   };
 
