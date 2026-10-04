@@ -35,10 +35,7 @@ in
         address = cfg.address;
         nickname = cfg.nick;
         username = cfg.nick;
-        password-cmd = [
-          (lib.getExe' pkgs.coreutils "cat")
-          cfg.passwordFile
-        ];
+        password-cmd = ["cat" cfg.passwordFile];
         tls = true;
         pane-widths.channels = 0;
       };
