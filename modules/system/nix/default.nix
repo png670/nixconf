@@ -1,3 +1,4 @@
+
 { ... }:
 
 {
@@ -7,11 +8,13 @@
   ];
   nix.settings.auto-optimise-store = true;
 
-  # Keep the store from growing forever.
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 14d";
+  nix.gc.automatic = false;
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 2";
+    flake = "/home/png76/nixos"; 
   };
 
   nixpkgs.config.allowUnfree = true;

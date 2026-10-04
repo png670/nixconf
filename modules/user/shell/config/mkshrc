@@ -15,8 +15,8 @@ alias \
 
 # Nix aliases
 alias \
-	rebuild='cd ~/nixos && sudo nixos-rebuild switch --flake ".#snow"' \
-	nix-clean='sudo nix-collect-garbage -d && nix-collect-garbage -d && nix store optimise'
+	alias rebuild='nh os switch --flake /home/png76/nixos#snow'
+	alias nix-clean='nh clean all && nix store optimise'
 
 alias please='sudo $(fc -ln -1)'
 
