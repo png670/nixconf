@@ -1,0 +1,17 @@
+keys:
+  - &origan age1xc0cs2847kzp845frs2ru8u39url4zk9k320mve66kfh2sfnge5q3suwya
+  - &snow age1sp0lk6lfrcrfacv3lzescp7hefwcnmpfv9rsphjpnk9h7el5he4serx36j
+  - &you age1u54z2m2k85rn0929tr4x5s2052s79fxjkq5tlq2sg63jtwe5r4wscsf2mt
+
+creation_rules:
+  - path_regex: hosts/origan/secrets\.yaml$
+    key_groups:
+      - age:
+          - *origan
+          - *you
+
+  - path_regex: hosts/snow/secrets\.yaml$
+    key_groups:
+      - age:
+          - *snow
+          - *you

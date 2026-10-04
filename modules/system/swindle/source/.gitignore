@@ -1,0 +1,7 @@
+# Build products — Nix regenerates these in its own sandboxed build.
+# Don't vendor them; keep this directory to hand-written source only.
+*.o
+*-protocol.c
+*-protocol.h
+swindle
+smsg/smsg

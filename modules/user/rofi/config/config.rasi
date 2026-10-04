@@ -1,0 +1,98 @@
+/*
+ * Minimal centred rofi theme - two colours only
+ * Font:   GoMono Nerd Font
+ * Colours: background #000407, foreground #c1c2c3
+ * Selected row = inverted. Mode label (drun / run) sits on the right.
+ */
+
+configuration {
+    show-icons:          false;
+    drun-display-format: "{name}";
+    display-drun:        "drun";
+    display-run:         "run";
+    display-window:      "window";
+}
+
+* {
+    bg: #000407;
+    fg: #c1c2c3;
+
+    background-color: transparent;
+    text-color:       @fg;
+    font:             "GoMono Nerd Font 9";
+
+    margin:  0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    location:         center;
+    anchor:           center;
+    width:            520px;
+
+    background-color: @bg;
+    border:           0px;
+    border-color:     @fg;
+    border-radius:    0;
+    padding:          2px;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing:  2px;
+}
+
+inputbar {
+    children: [ entry, prompt ];
+    padding:  4px 6px;
+    spacing:  8px;
+}
+
+entry {
+    placeholder: "";
+    text-color:  @fg;
+}
+
+prompt {
+    text-color: @fg;
+}
+
+listview {
+    lines:        6;
+    columns:      1;
+    fixed-height: false;
+    scrollbar:    false;
+    spacing:      0;
+    border:  0; 
+    padding: 0;
+}
+
+element {
+    padding: 4px 6px;
+}
+
+/* every non-selected state gets the same look, so nothing else leaks in */
+element normal.normal,
+element normal.urgent,
+element normal.active,
+element alternate.normal,
+element alternate.urgent,
+element alternate.active {
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+/* selected = inverted */
+element selected.normal,
+element selected.urgent,
+element selected.active {
+    background-color: @fg;
+    text-color:       @bg;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
