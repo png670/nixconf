@@ -14,15 +14,15 @@ in
         inStore = false;
         absolute = true;
       };
+      description = "File holding the auth key; must not be in the Nix store.";
     };
 
-    advertiseLanRoutes = lib.mkEnableOption;
+    advertiseLanRoutes = lib.mkEnableOption "advertising this router's LAN as a Tailscale subnet route";
 
-    trustTailnet = lib.mkEnableOption;
+    trustTailnet = lib.mkEnableOption "accepting all traffic from tailnet peers";
   };
 
   config = lib.mkIf cfg.enable {
-
     services.tailscale = {
       enable = true;
       authKeyFile = cfg.authKeyFile;
@@ -35,7 +35,8 @@ in
     networking.firewall = {
       trustedInterfaces = lib.optional cfg.trustTailnet tailnet;
 
-      # Forwarding into the LAN is what a subnet route is for
+      # Forwarding into the LAN is what a subnet route is for (the router
+      # module filters forwarded traffic).
       extraForwardRules = lib.optionalString cfg.advertiseLanRoutes ''
         iifname "${tailnet}" oifname "${routerCfg.lanInterface}" accept
       '';

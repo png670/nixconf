@@ -43,18 +43,10 @@
         {
           formatter = pkgs.nixfmt;
 
-          # builds every host that runs on this system.
-          checks =
-            lib.mapAttrs' (host: nixos: lib.nameValuePair "host-${host}" nixos.config.system.build.toplevel) (
-              lib.filterAttrs (_: nixos: nixos.pkgs.stdenv.hostPlatform.system == system) self.nixosConfigurations
-            )
-
-          devShells.default = pkgs.mkShell {
-            packages = with pkgs; [
-              git
-              nixfmt
-            ];
-          };
+          # Builds every host that runs on this system.
+          checks = lib.mapAttrs' (
+            host: nixos: lib.nameValuePair "host-${host}" nixos.config.system.build.toplevel
+          ) (lib.filterAttrs (_: nixos: nixos.pkgs.stdenv.hostPlatform.system == system) self.nixosConfigurations);
         };
 
       # Every directory under ./hosts is a host
