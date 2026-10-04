@@ -16,16 +16,25 @@ in
       type = lib.types.listOf lib.types.port;
       default = [ ];
       example = [ 24872 ];
-      description = "TCP and UDP ports to open on every interface, for LAN co-op games.";
+      description = "TCP and UDP ports to open on the specified interface.";
     };
 
-    hostDedicatedServers = lib.mkEnableOption "opening the firewall for Source dedicated servers";
+    openPortsInterface = lib.mkOption {
+      type = lib.types.str;
+      default = "wlan0";
+      description = "Network interface on which gaming ports are opened.";
+    };
+
+    hostDedicatedServers =
+      lib.mkEnableOption "opening the firewall for Source dedicated servers";
   };
 
   config = lib.mkIf cfg.enable {
     programs.steam = {
       enable = true;
+
       extest.enable = true;
+
       remotePlay.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
       dedicatedServer.openFirewall = cfg.hostDedicatedServers;
@@ -46,6 +55,7 @@ in
 
       gamescopeSession = {
         enable = true;
+
         env = {
           WLR_RENDERER = "vulkan";
           DXVK_HDR = "1";
@@ -53,9 +63,10 @@ in
           ENABLE_HDR_WSI = "1";
           WINE_FULLSCREEN_FSR = "1";
         };
+
         args = [
           "--xwayland-count 1"
-          "-e" # Enable Steam integration
+          "-e"
           "--adaptive-sync"
           "--hdr-enabled"
           "--hdr-itm-enable"
@@ -69,12 +80,13 @@ in
     ];
 
     programs.gamemode.enable = true;
+
     programs.gamescope = {
       enable = true;
       capSysNice = false;
     };
 
-    networking.firewall = {
+    networking.firewall.interfaces.${cfg.openPortsInterface} = {
       allowedTCPPorts = cfg.openPorts;
       allowedUDPPorts = cfg.openPorts;
     };
