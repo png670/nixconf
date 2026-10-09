@@ -12,7 +12,6 @@ in
   options.userSettings.git.enable = lib.mkEnableOption "git";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.gh ];
     programs.git = {
       enable = true;
       lfs.enable = true;
@@ -23,6 +22,11 @@ in
 
         init.defaultBranch = "main";
       };
+    };
+
+    programs.gh = {
+      enable = true;
+      gitCredentialHelper.enable = true;
     };
 
     services.ssh-agent.enable = true;
