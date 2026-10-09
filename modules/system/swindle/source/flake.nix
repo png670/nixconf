@@ -1,5 +1,5 @@
 {
-  description = "swindle: a dwl fork with Lua config, IPC, and ext-workspace support, plus its smsg client";
+  description = "A dwl fork with Lua config, IPC, and ext-workspace support, plus its smsg client";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
