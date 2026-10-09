@@ -6,8 +6,8 @@ map("n", "<leader>P", ":PlugInstall<CR>", "Install plugins")
 map("n", "<leader>u", ':silent !xdg-open "<cWORD>" &<CR>', "Open URL under cursor")
 
 -- NvimTree keybinds
--- map("n", "<leader>f", ":NvimTreeFocus<CR>")
--- map("n", "<leader>t", ":NvimTreeToggle<CR>")
+map("n", "<leader>f", ":NvimTreeFocus<CR>")
+map("n", "<leader>t", ":NvimTreeToggle<CR>")
 
 map("n", "<Esc>", ":nohlsearch<CR>", "Clear search highlight")
 map("n", "<C-h>", "<C-w>h", "Window left")
