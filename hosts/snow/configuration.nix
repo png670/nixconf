@@ -45,12 +45,6 @@
   };
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.limine.extraEntries = ''
-    /Windows 11
-        protocol: efi
-        path: uuid(f381ab57-1ad7-4c51-92aa-f6c7fc678729):/EFI/Microsoft/Boot/bootmgfw.efi
-  '';
-
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelModules = [ "i2c-dev" ];
 
