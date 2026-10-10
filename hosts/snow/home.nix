@@ -15,7 +15,6 @@ in
     rofi.enable = true;
     waybar.enable = true;
     git.enable = true;
-    swindle.enable = true;
 
     senpai = {
       enable = true;

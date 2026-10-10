@@ -1,3 +1,5 @@
+
+
 {
   lib,
   config,
@@ -19,10 +21,11 @@ in
       description = "TCP and UDP ports to open on the specified interface.";
     };
 
-    openPortsInterface = lib.mkOption {
-      type = lib.types.str;
-      default = "wlan0";
-      description = "Network interface on which gaming ports are opened.";
+    openPortsInterfaces = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ];
+      example = [ "enp3s0" "wlp4s0" ];
+      description = "Interfaces on which openPorts are opened, empty means all interfaces.";
     };
 
     hostDedicatedServers =
@@ -86,9 +89,16 @@ in
       capSysNice = false;
     };
 
-    networking.firewall.interfaces.${cfg.openPortsInterface} = {
-      allowedTCPPorts = cfg.openPorts;
-      allowedUDPPorts = cfg.openPorts;
-    };
+    networking.firewall = lib.mkIf (cfg.openPorts != [ ]) (
+      if cfg.openPortsInterfaces == [ ] then {
+        allowedTCPPorts = cfg.openPorts;
+        allowedUDPPorts = cfg.openPorts;
+      } else {
+        interfaces = lib.genAttrs cfg.openPortsInterfaces (_: {
+          allowedTCPPorts = cfg.openPorts;
+          allowedUDPPorts = cfg.openPorts;
+        });
+      }
+    );
   };
 }

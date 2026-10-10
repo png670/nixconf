@@ -1,3 +1,5 @@
+
+
 {
   config,
   lib,
@@ -10,8 +12,7 @@ let
 in
 {
   options.userSettings.swindle = {
-    # if the compositor is installed, configure it.
-    enable = lib.mkEnableOption {
+    enable = lib.mkEnableOption "the swindle configuration" // {
       default = osConfig.systemSettings.swindle.enable or false;
     };
 
@@ -23,7 +24,9 @@ in
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."swindle/config.lua".text =
-      lib.replaceStrings [ "@wallpaper@" ] [ (lib.escapeShellArg cfg.wallpaper) ]
+      lib.replaceStrings
+        [ "@wallpaper@" ]
+        [ (lib.escapeShellArg cfg.wallpaper) ]
         (builtins.readFile ./config/config.lua);
   };
 }
