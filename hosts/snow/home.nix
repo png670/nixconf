@@ -15,6 +15,7 @@ in
     rofi.enable = true;
     waybar.enable = true;
     git.enable = true;
+    fastfetch.enable = true;
 
     senpai = {
       enable = true;
