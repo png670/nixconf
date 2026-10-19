@@ -59,6 +59,7 @@ in
         "video"
         "input"
         "render"
+	"uinput"
       ]
       ++ lib.optional config.networking.networkmanager.enable "networkmanager"
       ++ lib.optional config.services.seatd.enable "seat"

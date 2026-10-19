@@ -16,8 +16,8 @@ in
       firefox
       thunar
       vesktop
-      ufetch
       anki
+      rnote
     ];
 
     fonts.packages = with pkgs; [

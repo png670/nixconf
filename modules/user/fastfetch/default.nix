@@ -9,21 +9,20 @@ in
     programs.fastfetch = {
       enable = true;
       settings = {
-        logo = { type = "builtin"; source = "alpine_small"; };
+        logo = { type = "builtin"; source = "nixos_small"; };
 
         display = {
           separator = " ";
-          key.width = 6;
+          key.width = 8;
           color = { keys = "blue"; title = "blue"; };
-          duration.abbreviation = true;
         };
 
         modules = [
           "title"
           { type = "os";       key = "os";     format = "{name}"; }
-          { type = "host";     key = "host"; }
           { type = "kernel";   key = "kernel"; format = "{sysname}"; }
-          { type = "uptime";   key = "uptime"; }
+          { type = "shell";    key = "shell"; }
+          { type = "disk";     key = "fs";     folders = "/"; }
           { type = "memory";   key = "memory"; }
           { type = "packages"; key = "pkgs";   format = "{all}"; }
           { type = "wm";       key = "wm"; }

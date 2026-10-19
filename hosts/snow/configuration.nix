@@ -44,9 +44,12 @@
     };
   };
 
+
+  hardware.opentabletdriver.enable = true;
+
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelModules = [ "i2c-dev" ];
+  boot.kernelModules = [ "i2c-dev" "uinput" ];
 
   system.stateVersion = "26.05";
 }

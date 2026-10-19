@@ -40,6 +40,7 @@ autostart = {
     "swaybg -i @wallpaper@ &",
     "mako &",
     "waybar &",
+    "otd-daemon &",
 }
 
 
