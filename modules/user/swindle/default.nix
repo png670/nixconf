@@ -18,7 +18,7 @@ in
 
     wallpaper = lib.mkOption {
       type = lib.types.str;
-      default = "${config.home.homeDirectory}/Pictures/nebula.jpg";
+      default = "${config.home.homeDirectory}/Pictures/clouds.jpg";
     };
   };
 

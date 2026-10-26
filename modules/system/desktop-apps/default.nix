@@ -17,6 +17,7 @@ in
       thunar
       vesktop
       anki
+      ufetch
       rnote
     ];
 

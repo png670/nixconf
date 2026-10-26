@@ -30,7 +30,7 @@ in
         sort = "-time";
         layer = "overlay";
         anchor = "top-right";
-        background-color = "#150a09";
+        background-color = "#0d0606";
         text-color = "#c4c1c1";
         width = 300;
         height = 110;

@@ -8,7 +8,7 @@ configuration {
 }
 
 * {
-    bg: #150a09;
+    bg: #0d0606;
     fg: #c4c1c1;
 
     background-color: transparent;
