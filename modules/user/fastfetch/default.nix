@@ -9,25 +9,28 @@ in
     programs.fastfetch = {
       enable = true;
       settings = {
-        logo = { type = "builtin"; source = "nixos_small"; };
+        logo = {
+          type = "file";
+          source = "${./glenda.txt}";
+          color = { "1" = "39"; };
+          padding = { top = 1; left = 0; right = 4; };
+        };
 
         display = {
           separator = " ";
-          key.width = 8;
-          color = { keys = "blue"; title = "blue"; };
+          key.width = 10;
+          color = { keys = "39"; title = "39"; };
         };
 
         modules = [
           "title"
-          { type = "os";       key = "os";     format = "{name}"; }
-          { type = "kernel";   key = "kernel"; format = "{sysname}"; }
-          { type = "shell";    key = "shell"; }
-          { type = "disk";     key = "fs";     folders = "/"; }
-          { type = "memory";   key = "memory"; }
-          { type = "packages"; key = "pkgs";   format = "{all}"; }
-          { type = "wm";       key = "wm"; }
-          "break"
-          { type = "colors"; symbol = "block"; paddingLeft = 3; block.range = [ 0 7 ]; }
+          { type = "os";       key = "OS:";     format = "{name}"; }
+          { type = "kernel";   key = "KERNEL:"; format = "{sysname}"; }
+          { type = "shell";    key = "SHELL:"; }
+          { type = "disk";     key = "FS:";     folders = "/"; }
+          { type = "memory";   key = "MEMORY:"; }
+          { type = "packages"; key = "PKGS:";   format = "{all}"; }
+          { type = "wm";       key = "WM:"; }
         ];
       };
     };
