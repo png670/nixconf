@@ -18,6 +18,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    swindle = {
+      url = "git+https://scm.hgdump.net/tsukasa/swindle";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,7 +47,7 @@
         {
           formatter = pkgs.nixfmt;
 
-          # Builds every host that runs on this system.
+          # Builds every host that runs on this system
           checks = lib.mapAttrs' (
             host: nixos: lib.nameValuePair "host-${host}" nixos.config.system.build.toplevel
           ) (lib.filterAttrs (_: nixos: nixos.pkgs.stdenv.hostPlatform.system == system) self.nixosConfigurations);

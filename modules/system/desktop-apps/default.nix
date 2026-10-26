@@ -22,6 +22,7 @@ in
 
     fonts.packages = with pkgs; [
       nerd-fonts.go-mono
+      libertinus
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-color-emoji

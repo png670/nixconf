@@ -12,28 +12,28 @@ in
       settings = {
         main = {
           shell = "mksh";
-          font = "GoMono Nerd Font:size=10";
+          font = "Libertinus Mono:size=10";
           pad = "10x10";
           resize-by-cells = "no";
         };
         colors-dark = {
-          background = "200a10";
+          background = "150a09";
           foreground = "c4c1c1";
-          regular0 = "200a10";
-          regular1 = "a82c3e";
-          regular2 = "9c3a2c";
-          regular3 = "a63e26";
-          regular4 = "b04624";
-          regular5 = "9a3050";
-          regular6 = "bc6a2c";
+          regular0 = "150a09";
+          regular1 = "b02a2c";
+          regular2 = "a02e22";
+          regular3 = "b43a2e";
+          regular4 = "a62428";
+          regular5 = "821c22";
+          regular6 = "9a3030";
           regular7 = "c4c1c1";
-          bright0 = "6c5858";
-          bright1 = "c93a4e";
-          bright2 = "bd4a38";
-          bright3 = "c8562a";
-          bright4 = "cc5a28";
-          bright5 = "b03e60";
-          bright6 = "c4662c";
+          bright0 = "6c5656";
+          bright1 = "d43030";
+          bright2 = "c83a2c";
+          bright3 = "d4443a";
+          bright4 = "c82c30";
+          bright5 = "a4262c";
+          bright6 = "c04440";
           bright7 = "c4c1c1";
           alpha = "1.0";
         };

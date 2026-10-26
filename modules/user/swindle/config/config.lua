@@ -33,6 +33,7 @@ input = {
     click_method             = "button_areas",
     accel_profile            = "adaptive",
     accel_speed              = 0.0,
+    layout                   = "gb",   
 }
 
 autostart = {

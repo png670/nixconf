@@ -25,13 +25,13 @@ in
     services.mako = {
       enable = true;
       settings = {
-        font = "GoMono Nerd Font 8";
+        font = "Libertinus Mono 8";
         format = "<b>%s</b>\\n%b"; # \n is literal — mako expands it itself
         sort = "-time";
         layer = "overlay";
         anchor = "top-right";
-        background-color = "#000407";
-        text-color = "#c1c2c3";
+        background-color = "#150a09";
+        text-color = "#c4c1c1";
         width = 300;
         height = 110;
         margin = 8;
