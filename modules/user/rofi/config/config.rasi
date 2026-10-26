@@ -1,9 +1,3 @@
-/*
- * Minimal centred rofi theme - two colours only
- * Font:   GoMono Nerd Font
- * Colours: background #000407, foreground #c1c2c3
- * Selected row = inverted. Mode label (drun / run) sits on the right.
- */
 
 configuration {
     show-icons:          false;
@@ -14,12 +8,12 @@ configuration {
 }
 
 * {
-    bg: #000407;
-    fg: #c1c2c3;
+    bg: #150a09;
+    fg: #c4c1c1;
 
     background-color: transparent;
     text-color:       @fg;
-    font:             "GoMono Nerd Font 9";
+    font:             "Libertinus Mono 9";
 
     margin:  0;
     padding: 0;
