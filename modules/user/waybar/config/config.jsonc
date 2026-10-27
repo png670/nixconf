@@ -51,7 +51,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "foot -e htop",
+    "on-click": "foot -e btop",
     "on-click-right": "foot",
   },
   "clock": {
