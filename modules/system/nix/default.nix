@@ -9,6 +9,8 @@
   nix.settings.auto-optimise-store = true;
 
   nix.gc.automatic = false;
+  
+  programs.nix-ld.enable = true;
 
   programs.nh = {
     enable = true;

@@ -16,6 +16,7 @@ in
     waybar.enable = true;
     git.enable = true;
     fastfetch.enable = true;
+    btop.enable = true;
 
     senpai = {
       enable = true;

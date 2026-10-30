@@ -26,7 +26,6 @@
     graphics.enable = true;
     audio.enable = true;
     networkManager.enable = true;
-    ptt.enable = true;
     syncthing.openFirewall = true;
 
     security = {
@@ -44,7 +43,6 @@
       };
     };
   };
-
 
   hardware.opentabletdriver.enable = true;
 

@@ -19,6 +19,7 @@ in
       anki
       ufetch
       rnote
+      (python3.withPackages (ps: [ ps.tkinter ]))
     ];
 
     fonts.packages = with pkgs; [
