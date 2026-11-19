@@ -81,7 +81,29 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix",
-        "swindle": "swindle"
+        "swindle": "swindle",
+        "yapfast": "yapfast"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "yapfast",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792133817,
+        "narHash": "sha256-LivT78KkZ18adR5daoXj2nlIOxuLw6B96nvW4FOl4d0=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "ec07af44be2e0ce4e1a17e00a97d44232607c1ec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "sops-nix": {
@@ -137,6 +159,28 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "yapfast": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1794703579,
+        "narHash": "sha256-y+J9CfrBV3Oig7XAJ44oT6qswipFoDg5jVZWTfGBPsQ=",
+        "owner": "yapfast",
+        "repo": "yapfast",
+        "rev": "72d78a051c5a646a53b836aa7fa46ebfb199409e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yapfast",
+        "ref": "v0.4.0",
+        "repo": "yapfast",
         "type": "github"
       }
     }

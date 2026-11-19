@@ -18,8 +18,14 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     swindle = {
       url = "git+https://scm.hgdump.net/tsukasa/swindle";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    yapfast = {
+      url = "github:yapfast/yapfast/v0.4.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

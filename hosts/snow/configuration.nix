@@ -46,6 +46,9 @@
 
   hardware.opentabletdriver.enable = true;
 
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;  # unlocks it when you log in at the TTY
+
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelModules = [ "i2c-dev" "uinput" ];

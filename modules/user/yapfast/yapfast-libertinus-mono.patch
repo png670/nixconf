@@ -1,0 +1,71 @@
+diff --git a/crates/yapfast-iced-kit/src/fonts.rs b/crates/yapfast-iced-kit/src/fonts.rs
+index 874e158..ca4f093 100644
+--- a/crates/yapfast-iced-kit/src/fonts.rs
++++ b/crates/yapfast-iced-kit/src/fonts.rs
+@@ -24,7 +24,7 @@ use iced::{
+     futures::{Stream, StreamExt, channel::mpsc},
+ };
+ 
+-pub const REGULAR: Font = Font::with_name("DM Sans");
++pub const REGULAR: Font = Font::with_name("Libertinus Mono");
+ pub const MEDIUM: Font = Font {
+     weight: Weight::Medium,
+     ..REGULAR
+@@ -45,9 +45,9 @@ pub const ITALIC: Font = Font {
+ /// The family name of the Twemoji font `crates/yapfast-iced/build.rs` makes.
+ pub const TWEMOJI: &str = "Yapfast Twemoji";
+ 
+-const DM_SANS: &[u8] = include_bytes!("../fonts/DMSans[opsz,wght].ttf");
+-/// Its italic, for Markdown's emphasis.
+-const DM_SANS_ITALIC: &[u8] = include_bytes!("../fonts/DMSans-Italic[opsz,wght].ttf");
++/// Libertinus Mono, copied in from nixpkgs' libertinus before the build.
++/// It has one face; cosmic-text slants it for italics.
++const UI_FONT: &[u8] = include_bytes!("../fonts/LibertinusMono-Regular.otf");
+ 
+ /// Makes the window's font system: DM Sans and its italic, `twemoji` (the
+ /// font `crates/yapfast-iced/build.rs` packs, or nothing), and the system's
+@@ -57,10 +57,7 @@ const DM_SANS_ITALIC: &[u8] = include_bytes!("../fonts/DMSans-Italic[opsz,wght].
+ /// ([`load_wanted`]).
+ pub fn install(twemoji: &'static [u8]) {
+     let mut db = cosmic_text::fontdb::Database::new();
+-    db.load_font_source(cosmic_text::fontdb::Source::Binary(Arc::new(DM_SANS)));
+-    db.load_font_source(cosmic_text::fontdb::Source::Binary(Arc::new(
+-        DM_SANS_ITALIC,
+-    )));
++    db.load_font_source(cosmic_text::fontdb::Source::Binary(Arc::new(UI_FONT)));
+     if !twemoji.is_empty() {
+         db.load_font_source(cosmic_text::fontdb::Source::Binary(Arc::new(twemoji)));
+     }
+@@ -78,8 +75,8 @@ pub fn install(twemoji: &'static [u8]) {
+     if let Some(mono) = mono {
+         db.set_monospace_family(mono);
+     }
+-    db.set_sans_serif_family("DM Sans");
+-    let fallback = Fallback(&["DM Sans", TWEMOJI]);
++    db.set_sans_serif_family("Libertinus Mono");
++    let fallback = Fallback(&["Libertinus Mono", TWEMOJI]);
+     let mut system = font_system().write().expect("font system");
+     *system.raw() =
+         cosmic_text::FontSystem::new_with_locale_and_db_and_fallback("en-US".into(), db, fallback);
+@@ -716,7 +713,7 @@ mod tests {
+         let raw = system.raw();
+         let mut buffer = Buffer::new(raw, Metrics::new(16.0, 20.0));
+         let attrs = Attrs::new()
+-            .family(cosmic_text::Family::Name("DM Sans"))
++            .family(cosmic_text::Family::Name("Libertinus Mono"))
+             .weight(cosmic_text::Weight(weight))
+             .style(if italic {
+                 cosmic_text::Style::Italic
+diff --git a/crates/yapfast-iced/src/paint.rs b/crates/yapfast-iced/src/paint.rs
+index 0d7a4b5..6f8c5e6 100644
+--- a/crates/yapfast-iced/src/paint.rs
++++ b/crates/yapfast-iced/src/paint.rs
+@@ -154,7 +154,7 @@ pub fn styled_name(
+     use cosmic_text::{Attrs, Buffer, Family, Metrics, Shaping, SwashCache, SwashContent, Weight};
+     let em = size;
+     let line_height = (size * 1.3).ceil();
+-    let family = look.family.map_or(Family::Name("DM Sans"), Family::Name);
++    let family = look.family.map_or(Family::Name("Libertinus Mono"), Family::Name);
+     let weight = if look.family.is_some() {
+         look.weight
+     } else {

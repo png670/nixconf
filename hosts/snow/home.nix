@@ -17,6 +17,7 @@ in
     git.enable = true;
     fastfetch.enable = true;
     btop.enable = true;
+    yapfast.enable = true;
 
     senpai = {
       enable = true;
