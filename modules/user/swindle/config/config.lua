@@ -37,7 +37,7 @@ input = {
 }
 
 autostart = {
-    "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP",
+    "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP=swindle:wlroots && systemctl --user start swindle-session.target",
     "swaybg -i @wallpaper@ &",
     "mako &",
     "waybar &",
@@ -67,7 +67,7 @@ keybinds = {
     { mods = {"logo"}, key = "Return", action = "spawn", args = {"foot"} },
     { mods = {"logo"}, key = "b",      action = "spawn", args = {"firefox"} },
     { mods = {"logo"}, key = "m",      action = "spawn", args = {"thunderbird"} },
-    { mods = {"logo"}, key = "v",      action = "spawn", args = {"vesktop"} },
+    { mods = {"logo"}, key = "v",      action = "spawn", args = {"yapfast"} },
 
     -- ===== Terminal Applications =====
     { mods = {"logo", "shift"}, key = "w", action = "spawn", args = {"foot", "-e", "nmtui"} },

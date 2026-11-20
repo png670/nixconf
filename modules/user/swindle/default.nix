@@ -28,5 +28,15 @@ in
         [ "@wallpaper@" ]
         [ (lib.escapeShellArg cfg.wallpaper) ]
         (builtins.readFile ./config/config.lua);
+
+    systemd.user.targets.swindle-session = {
+      Unit = {
+        Description = "swindle compositor session";
+        Documentation = [ "man:systemd.special(7)" ];
+        BindsTo = [ "graphical-session.target" ];
+        Wants = [ "graphical-session-pre.target" ];
+        After = [ "graphical-session-pre.target" ];
+      };
+    };
   };
 }

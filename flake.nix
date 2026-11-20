@@ -25,7 +25,12 @@
     };
 
     yapfast = {
-      url = "github:yapfast/yapfast/v0.4.0";
+      url = "github:yapfast/yapfast";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    serein = {
+      url = "github:ViceVerse-cz/Serein";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

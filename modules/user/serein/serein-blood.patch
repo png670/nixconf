@@ -1,0 +1,69 @@
+diff --git a/crates/ui/src/design.rs b/crates/ui/src/design.rs
+index ad8144c..f25cde0 100644
+--- a/crates/ui/src/design.rs
++++ b/crates/ui/src/design.rs
+@@ -268,7 +268,7 @@ const fn rgba(value: u32, alpha: u8) -> Color32 {
+ 	)
+ }
+ /// Serein azure: the house accent, packed for call sites that speak in integer colours.
+-pub const DEFAULT_PRIMARY_RGB: u32 = 0x1a72e8;
++pub const DEFAULT_PRIMARY_RGB: u32 = 0x8d1c1a;
+ pub const DEFAULT_PRIMARY_COLOR: [u8; 3] = [
+ 	(DEFAULT_PRIMARY_RGB >> 16) as u8,
+ 	(DEFAULT_PRIMARY_RGB >> 8) as u8,
+@@ -297,17 +297,17 @@ fn dark_common(
+ 		hover,
+ 		selected,
+ 		border,
+-		text_strong: rgb(0xededef),
+-		text: rgb(0xcfcfd4),
+-		muted: rgb(0x94949c),
+-		link: rgb(0x54abff),
++		text_strong: rgb(0xdcd8d8),
++		text: rgb(0xc4c1c1),
++		muted: rgb(0x8a7f7f),
++		link: rgb(0xd96a66),
+ 		accent: PRIMARY,
+ 		accent_text: Color32::WHITE,
+ 		positive: rgb(0x2fb87a),
+ 		warning: rgb(0xe8a33d),
+ 		danger: DARK_DANGER,
+ 		mention_bg: MENTION_BG,
+-		mention_text: rgb(0xbcd9ff),
++		mention_text: rgb(0xe8b4b2),
+ 		backdrop: None,
+ 		canvas: chat,
+ 		surface: sidebar,
+@@ -333,13 +333,13 @@ fn gradient(stops: [u32; 2], border: u32) -> Palette {
+ pub fn builtin_colors(dark: bool, variant: Variant) -> Palette {
+ 	let palette = match variant {
+ 		Variant::Standard if dark => dark_common(
+-			rgb(0x0e0e10),
+-			rgb(0x141416),
+-			rgb(0x18181b),
+-			rgb(0x202023),
+-			rgb(0x242427),
+-			rgb(0x2e2e32),
+-			rgb(0x27272a),
++			rgb(0x0d0606),
++			rgb(0x130909),
++			rgb(0x170b0b),
++			rgb(0x1f0f0f),
++			rgb(0x241212),
++			rgb(0x2e1616),
++			rgb(0x2a1313),
+ 		),
+ 		Variant::Standard => Palette {
+ 			base: rgb(0xe4e4e7),
+diff --git a/crates/ui/src/fonts.rs b/crates/ui/src/fonts.rs
+index c002562..2995470 100644
+--- a/crates/ui/src/fonts.rs
++++ b/crates/ui/src/fonts.rs
+@@ -729,6 +729,7 @@ fn definitions(with_cjk: bool) -> FontDefinitions {
+ 	// (egui has no synthetic bold). Each weight family falls back to egui's defaults.
+ 	let weights = [
+ 		(FontFamily::Proportional, "Inter", INTER),
++		(FontFamily::Monospace, "Inter", INTER),
+ 		(
+ 			FontFamily::Name(crate::design::MEDIUM.into()),
+ 			"Inter Medium",
