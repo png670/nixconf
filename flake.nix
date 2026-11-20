@@ -23,11 +23,6 @@
       url = "git+https://scm.hgdump.net/tsukasa/swindle";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    yapfast = {
-      url = "github:yapfast/yapfast";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     
     serein = {
       url = "github:ViceVerse-cz/Serein";

@@ -67,7 +67,7 @@ keybinds = {
     { mods = {"logo"}, key = "Return", action = "spawn", args = {"foot"} },
     { mods = {"logo"}, key = "b",      action = "spawn", args = {"firefox"} },
     { mods = {"logo"}, key = "m",      action = "spawn", args = {"thunderbird"} },
-    { mods = {"logo"}, key = "v",      action = "spawn", args = {"yapfast"} },
+    { mods = {"logo"}, key = "v",      action = "spawn", args = {"serein"} },
 
     -- ===== Terminal Applications =====
     { mods = {"logo", "shift"}, key = "w", action = "spawn", args = {"foot", "-e", "nmtui"} },

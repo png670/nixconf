@@ -9,22 +9,16 @@
 let
   cfg = config.userSettings.serein;
 
-  font = "${pkgs.libertinus}/share/fonts/opentype/LibertinusMono-Regular.otf";
-
-  serein = inputs.serein.packages.${pkgs.stdenv.hostPlatform.system}.serein.overrideAttrs (old: {
-    # Blood-red dark palette + Libertinus Mono for code blocks too.
-    patches = (old.patches or [ ]) ++ [ ./serein-blood.patch ];
-
-    # Inter is baked in with include_bytes!, so swapping the files swaps the UI font.
-    postPatch = (old.postPatch or "") + ''
-      for face in Inter-Regular Inter-Medium Inter-SemiBold; do
-        cp --no-preserve=mode ${font} assets/fonts/$face.ttf
-      done
-    '';
-  });
+  # XWayland, so Mod+Q can hide Serein to the tray on swindle.
+  serein = pkgs.symlinkJoin {
+    name = "serein";
+    paths = [ inputs.serein.packages.${pkgs.stdenv.hostPlatform.system}.serein ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = "wrapProgram $out/bin/serein --unset WAYLAND_DISPLAY";
+  };
 in
 {
-  options.userSettings.serein.enable = lib.mkEnableOption "Patched Serein";
+  options.userSettings.serein.enable = lib.mkEnableOption "Serein";
 
   config = lib.mkIf cfg.enable {
     home.packages = [ serein ];
